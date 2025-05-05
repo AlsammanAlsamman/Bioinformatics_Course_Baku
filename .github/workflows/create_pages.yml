@@ -18,18 +18,16 @@ jobs:
       - name: Check Out Repository
         uses: actions/checkout@v4
 
-      - name: Set up Quarto # Use the recommended action
+      - name: Set up Quarto
         uses: quarto-dev/setup-quarto@v2
-        # You can specify a version if needed:
         # with:
-        #   version: 1.4.550
+        #   version: 1.4.550 # Specify a version if needed
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: 'release' # Or specify a version like '4.3.2'
 
-      # Optional but recommended: Cache R packages
       - name: Cache R packages
         uses: actions/cache@v4
         with:
@@ -44,33 +42,32 @@ jobs:
           packages: |
             any::ggplot2
             any::dplyr
-            # Add other required packages here, e.g., from DESCRIPTION file
+            # Add other required packages here
           # Or use this if you have a DESCRIPTION file:
           # dependencies: |
           #   Remotes, Imports, Suggests
 
-      # Remove this step if you DON'T need PDF output
-      # - name: Install TinyTeX (for PDF output)
-      #   run: quarto install tool tinytex
+      # --- This step is now ACTIVE ---
+      - name: Install TinyTeX (for PDF output)
+        run: quarto install tool tinytex
+      # --- End of activated step ---
 
       - name: Render Quarto Project
         run: |
-          # This assumes your project is defined by a _quarto.yml file
-          # in the repository root or a parent directory.
-          # Quarto will render based on _quarto.yml settings.
-          # Ensure _quarto.yml specifies `output-dir: output` if you
-          # specifically want the output in ./output instead of ./_site
+          # Renders the project based on _quarto.yml
+          # Ensure _quarto.yml exists and is configured correctly.
+          # Output defaults to _site unless output-dir is set.
           quarto render
         shell: bash
 
-      # Optional: If you have tests defined (e.g., using testthat)
+      # Optional: Run tests if you have them
       # - name: Run Tests
       #   run: |
-      #     Rscript -e 'devtools::test()' # Example using devtools/testthat
+      #     Rscript -e 'devtools::test()' # Example
 
       - name: Upload Rendered Output
         uses: actions/upload-artifact@v4
         with:
           name: rendered-site # Name of the artifact zip file
-          path: _site # Default Quarto output dir. Change to 'output' if you configured it in _quarto.yml
+          path: _site # Change to 'output' if configured in _quarto.yml
           if-no-files-found: error # Fail if the output dir is missing
