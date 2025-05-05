@@ -1,0 +1,11 @@
+# Welcome to the Plant Breeding Data Analysis Course
+
+**Target Audience:** Breeders in Baku, Azerbaijan with minimal prior data analysis or programming experience. Collaboration with ICARDA.
+
+**Goal:** To provide a practical and understandable introduction to analyzing common breeding data types using the R programming language.
+
+This course covers fundamental concepts in genetics and statistics relevant to breeding programs, alongside hands-on R coding sessions. We aim to build your confidence in handling your own data and interpreting results.
+
+Please use the navigation menu (Table of Contents) to move through the course modules.
+
+Let's begin!

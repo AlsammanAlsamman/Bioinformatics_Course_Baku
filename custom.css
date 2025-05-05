@@ -1,0 +1,23 @@
+/* Custom CSS to add logo to revealjs slides */
+
+.slide-background {
+  position: relative;
+}
+
+.reveal .slide-background::after { /* Target background pseudo-element */
+  content: "";
+  position: absolute;
+  bottom: 20px; /* Adjust vertical position */
+  right: 25px;  /* Adjust horizontal position */
+  width: 120px; /* Adjust width */
+  height: 55px; /* Adjust height - maintain aspect ratio */
+  background-image: url("assets/icarda_logo.png"); /* Path relative to project root */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.75; /* Optional transparency */
+}
+
+/* Optional: Hide logo on title slide */
+.reveal .slides section.title-slide .slide-background::after {
+  content: none; /* Hide on slides with class title-slide */
+}

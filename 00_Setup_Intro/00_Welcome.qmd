@@ -1,0 +1,20 @@
+# Welcome and Course Overview
+
+## Hello Baku Breeders!
+
+Welcome to this introductory course on data analysis for plant breeding, a collaboration with ICARDA. We are excited to guide you through the essential tools and concepts needed to make sense of your valuable breeding data using R.
+
+## Course Objectives
+
+-   Learn the fundamentals of the R programming language for data tasks.
+-   Understand basic concepts of genomic data.
+-   Perform basic data loading, cleaning, and quality control.
+-   Grasp key genetic concepts like allele frequency and relatedness (kinship).
+-   Understand the idea behind marker-trait association studies (GWAS).
+-   Get introduced to tools like GIGWA and basic AI applications.
+
+## Course Structure
+
+This course is divided into several modules, starting with setup and R basics, moving through data handling and genetic concepts, and ending with analysis methods and tools. Each module includes explanations and practical R exercises.
+
+No prior programming experience is required!

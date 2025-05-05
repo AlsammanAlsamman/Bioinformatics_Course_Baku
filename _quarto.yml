@@ -1,0 +1,85 @@
+project:
+  type: book # Primarily a book structure
+  output-dir: output
+
+book:
+  title: "Plant Breeding Data Analysis with R - Baku"
+  author: "Your Name / Breeding Institute Baku (ICARDA Collaboration)"
+  date: "today"
+  date-format: "YYYY-MM-DD"
+  chapters:
+    - index.qmd
+    - part: "Introduction and Setup"
+      chapters:
+        - 00_Setup_Intro/00_Welcome.qmd
+        - 00_Setup_Intro/01_Setup_R_RStudio.qmd
+    - part: "R Programming Fundamentals"
+      chapters:
+        - 01_R_Basics/01_Intro_To_R.qmd
+        - 01_R_Basics/02_Data_Types_Structures.qmd
+        - 01_R_Basics/03_Basic_Operations.qmd
+        - 01_R_Basics/04_Reading_Writing_Data.qmd
+        - 01_R_Basics/05_Simple_Plotting.qmd
+    - part: "Handling Breeding Data"
+      chapters:
+        - 02_Data_Handling/01_Loading_Breeding_Data.qmd
+        - 02_Data_Handling/02_Data_QC_Filtering.qmd
+    - part: "Core Genomic Concepts"
+      chapters:
+        - 03_Genomic_Concepts/01_SNPs_Genotypes.qmd
+        - 03_Genomic_Concepts/02_Allele_Frequency_MAF.qmd
+    - part: "Population Structure and Relatedness"
+      chapters:
+        - 04_Pop_Structure/01_Similarity_Distances.qmd
+        - 04_Pop_Structure/02_Kinship_Analysis.qmd
+        - 04_Pop_Structure/03_Visualizing_Structure.qmd
+    - part: "Marker-Trait Association (GWAS)"
+      chapters:
+        - 05_GWAS_Intro/01_Concept_Simple_Model.qmd
+        - 05_GWAS_Intro/02_Running_Basic_GWAS.qmd
+        - 05_GWAS_Intro/03_Interpreting_Results.qmd
+    - part: "Tools and Advanced Concepts"
+      chapters:
+        - 06_GIGWA_AI/01_GIGWA_Overview.qmd
+        - 06_GIGWA_AI/02_AI_Concepts_Breeders.qmd
+
+# --- Define Output Formats ---
+format:
+  # 1. HTML Book Format (Default for this project type)
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    # css: custom.css # CSS rules might need adjustment for book format
+
+  # 2. PDF Book Format
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    toc-depth: 3
+    # include-in-header: # More complex LaTeX needed for logo on book pages
+    #   text: |
+    #     \usepackage{eso-pic} \usepackage{graphicx} ... etc
+
+  # 3. Revealjs HTML Slides Format (For rendering individual files)
+  revealjs:
+    theme: default # Or sky, beige, simple, solarized, blood, moon, night, etc.
+    css: custom.css # Link the custom CSS for logo
+    slide-number: true
+    chalkboard: true
+    logo: assets/icarda_logo.png # Alternative revealjs logo option
+
+  # 4. Beamer PDF Slides Format (For rendering individual files)
+  beamer:
+    documentclass: beamer
+    theme: Madrid # Or AnnArbor, Boadilla, Montpellier, Bergen etc.
+    colortheme: default
+    logo: assets/icarda_logo.png # Path to the logo file
+    slide-level: 2 # Use ## headings for new slides
+    aspectratio: 169
+
+# Optional: Bibliography file
+# bibliography: references.bib
+
+# Editor preference
+editor: visual

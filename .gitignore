@@ -1,0 +1,33 @@
+# R and Quarto specific ignores
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+*.Rproj
+*~$
+*.bak
+
+# Quarto output
+/_site/
+/_book/
+/_freeze/
+
+# Data files (Consider uncommenting if data is very large)
+# data/raw/
+# data/processed/
+
+# Output files
+/output/
+# Keep pdfs folder if manually managed, otherwise ignore based on /output/
+# /output/pdfs/
+# *.html # Uncomment if you want to ignore top-level HTML files too
+*.docx
+
+# Cache and intermediate files
+*_cache/
+
+# Assets (usually tracked, but ignore if they become huge/redundant)
+# /assets/
+
+/.quarto/
