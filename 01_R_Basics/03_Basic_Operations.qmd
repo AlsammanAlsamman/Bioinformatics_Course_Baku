@@ -1,0 +1,138 @@
+# Module 1.3: Basic Operations in R
+
+Now that we know about data types and structures, let's see how to manipulate them.
+
+## Arithmetic Operations (Review)
+
+Works on numbers and numeric vectors/matrices element-wise.
+
+``` r
+yield1 <- 5.2
+yield2 <- 6.1
+
+yield1 + yield2
+yield1 * 10 # Scale up (e.g., plot yield to estimated per area)
+
+# On vectors
+plot_yields <- c(5.2, 4.5, 6.1, 5.5)
+plot_yields + 0.5 # Add 0.5 to every plot's yield
+plot_yields * 1000 / 10 # e.g. kg/plot to kg/ha if plot area = 10 sqm
+
+# Other operators: ^ (power), %% (remainder)
+2^3 # 2 to the power of 3
+10 %% 3 # Remainder of 10 divided by 3 is 1
+```
+
+## Logical Comparisons and Operators
+
+Used to ask TRUE/FALSE questions about our data. Essential for filtering.
+
+-   **Comparison Operators:**
+    -   `>` : Greater than
+    -   `<` : Less than
+    -   `>=`: Greater than or equal to
+    -   `<=`: Less than or equal to
+    -   `==`: **Exactly equal to** (TWO equal signs! Very common mistake to use just one `=`)
+    -   `!=`: Not equal to
+-   **Logical Operators (Combine TRUE/FALSE):**
+    -   `&` : AND (both sides must be TRUE)
+    -   `|` : OR (at least one side must be TRUE)
+    -   `!` : NOT (reverses TRUE to FALSE, FALSE to TRUE)
+
+``` r
+yield <- 5.2
+min_acceptable_yield <- 5.0
+variety <- "ICARDA_Gold"
+
+# Comparisons
+yield > min_acceptable_yield # Is yield acceptable? TRUE
+variety == "Local_Check"    # Is it the local check? FALSE
+variety != "Local_Check"    # Is it NOT the local check? TRUE
+
+# On vectors
+plot_yields <- c(5.2, 4.5, 6.1, 5.5)
+plot_yields > 5.0 # Which plots yielded above 5.0? [TRUE FALSE TRUE TRUE]
+
+plot_varieties <- c("ICARDA_Gold", "Local_Check", "ICARDA_RustResist", "ICARDA_Gold")
+plot_varieties == "ICARDA_Gold" # Which plots are ICARDA_Gold? [TRUE FALSE FALSE TRUE]
+
+# Combining conditions
+# Find plots where yield > 5.0 AND variety is ICARDA_Gold
+(plot_yields > 5.0) & (plot_varieties == "ICARDA_Gold") # [TRUE FALSE FALSE TRUE]
+
+# Find plots where yield > 6.0 OR variety is Local_Check
+(plot_yields > 6.0) | (plot_varieties == "Local_Check") # [FALSE TRUE TRUE FALSE]
+```
+
+## Vectorization: R's Superpower
+
+Many R operations are **vectorized**, meaning they automatically apply to each element of a vector without needing you to write a loop. This makes R code concise and efficient. We've already seen this with arithmetic (`plot_yields + 0.5`) and comparisons (`plot_yields > 5.0`).
+
+Functions like `mean()`, `sum()`, `min()`, `max()`, `sd()` (standard deviation), `length()` also work naturally on vectors:
+
+``` r
+plot_yields <- c(5.2, 4.5, 6.1, 5.5)
+
+mean(plot_yields)
+sd(plot_yields)
+sum(plot_yields > 5.0) # How many plots yielded > 5.0? (TRUE=1, FALSE=0)
+length(plot_yields) # How many plots?
+```
+
+## Working with Data Frames (Indexing and Filtering)
+
+This is crucial for selecting specific data from your tables.
+
+Let's use the `trial_data` data frame from the previous section:
+
+``` r
+trial_data <- data.frame(
+  PlotID = c("A101", "A102", "B101", "B102"),
+  Variety = factor(c("ICARDA_Gold", "Local_Check", "ICARDA_RustResist", "ICARDA_Gold")),
+  Yield_kg_plot = c(5.2, 4.5, 6.1, 5.5),
+  Is_Resistant = c(TRUE, FALSE, TRUE, TRUE)
+)
+```
+
+1.  **Accessing Columns:** Use `$` (most common) or `[[ ]]`. `r     trial_data$Variety     trial_data[["Yield_kg_plot"]]     mean(trial_data$Yield_kg_plot)`
+
+2.  **Accessing Rows/Columns/Cells using `[row, column]`:**
+
+    ``` r
+    # Get the value in Row 2, Column 3
+    trial_data[2, 3] # Should be 4.5
+
+    # Get the entire Row 1 (returns a data frame)
+    trial_data[1, ]
+
+    # Get the entire Column 2 (Variety column, returns a vector/factor)
+    trial_data[, 2]
+    # Get Columns 1 and 3 (PlotID and Yield)
+    trial_data[, c(1, 3)] # Use c() for multiple column indices
+    trial_data[, c("PlotID", "Yield_kg_plot")] # Can also use column names
+    ```
+
+3.  **Filtering Rows Based on Conditions (VERY IMPORTANT):** Use a logical condition inside the `row` part of the square brackets.
+
+    ``` r
+    # Select rows where Yield_kg_plot is greater than 5.0
+    high_yield_plots <- trial_data[trial_data$Yield_kg_plot > 5.0, ]
+    print(high_yield_plots)
+
+    # Select rows where Variety is "ICARDA_Gold"
+    icarda_gold_plots <- trial_data[trial_data$Variety == "ICARDA_Gold", ]
+    print(icarda_gold_plots)
+
+    # Select rows where Variety is "ICARDA_Gold" AND yield > 5.0
+    # (We generated the logical vector for this earlier)
+    condition <- (trial_data$Variety == "ICARDA_Gold") & (trial_data$Yield_kg_plot > 5.0)
+    print(condition) # Shows [TRUE FALSE FALSE TRUE]
+    selected_plots <- trial_data[condition, ]
+    print(selected_plots)
+
+    # Select rows where the variety is resistant
+    resistant_plots <- trial_data[trial_data$Is_Resistant == TRUE, ] # Or just trial_data[trial_data$Is_Resistant, ]
+    print(resistant_plots)
+    ```
+
+**Exercise:** Select the data for the 'Local_Check' variety from the `trial_data` data frame. Calculate its yield.

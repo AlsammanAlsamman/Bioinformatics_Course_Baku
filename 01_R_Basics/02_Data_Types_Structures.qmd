@@ -1,0 +1,135 @@
+# Module 1.2: R Data Types and Structures - The Building Blocks
+
+## Introduction: Types and Structures
+
+Think of data like building blocks:
+
+-   **Data Types:** The *kind* of block (e.g., numeric brick, text brick, true/false switch).
+-   **Data Structures:** How you *organize* those blocks (e.g., a single row of bricks, a flat grid, a complex box holding different things).
+
+Understanding these is fundamental to working with data in R.
+
+## Basic Data Types
+
+R needs to know what *kind* of information it's dealing with.
+
+1.  **Numeric:** Represents numbers. Can be integers (whole numbers) or doubles (with decimals). Used for measurements like yield, height, counts.
+
+``` r
+    yield <- 75.5     # Double (decimal)
+    num_plots <- 120  # Integer (whole number)
+    class(yield)      # Check the type
+    class(num_plots)  # Often stored as 'numeric' (double) by default
+```
+
+2.  **Character:** Represents text (strings). Always enclose text in double (`"`) or single (`'`) quotes. Used for IDs, names, descriptions.
+
+``` r
+    variety_name <- "ICARDA_RustResist"
+    plot_id <- 'Plot_A101'
+    class(variety_name)
+```
+
+3.  **Logical:** Represents TRUE or FALSE values. Often the result of comparisons. Crucial for filtering data.
+
+``` r
+   is_resistant <- TRUE
+   yield > 80 # This comparison results in a logical value
+   class(is_resistant)
+```
+
+4.  **Factor:** Special type for categorical data (variables with distinct levels or groups). R stores them efficiently using underlying numbers but displays the text labels. Very important for statistical models and plotting.
+
+``` r
+    # Example: Different locations in a trial
+    locations <- c("Baku", "Ganja", "Baku", "Sheki", "Ganja")
+    location_factor <- factor(locations)
+
+    print(location_factor) # Shows levels
+    class(location_factor)
+    levels(location_factor) # See the unique categories
+```
+
+## Key Data Structures
+
+How R organizes collections of data:
+
+1.  **Vector:** The most basic structure! A sequence (ordered list) containing elements **of the same data type**. Created using `c()` (combine function).
+
+``` r
+    # Vector of plot yields (numeric)
+    plot_yields <- c(75.5, 81.2, 78.9, 85.0)
+    # Vector of variety names (character)
+    plot_varieties <- c("ICARDA_Gold", "Local_Check", "ICARDA_Gold", "ICARDA_RustResist")
+    # Vector of resistance status (logical)
+    plot_resistance <- c(TRUE, FALSE, TRUE, TRUE)
+
+    plot_yields[1]       # Access the first element (Indexing starts at 1!)
+    plot_yields[2:4]     # Access elements 2 through 4
+    length(plot_yields)  # Get the number of elements
+```
+
+``` {style="red"}
+*Important:* If you mix types in `c()`, R will force them into a single common type (usually character).
+```
+
+``` r
+        mixed_vector <- c(10, "VarietyA", TRUE)
+        print(mixed_vector) # All become character strings!
+        class(mixed_vector)
+```
+
+2.  **Matrix:** A two-dimensional grid (rows and columns) where all elements **must be of the same data type**. Useful for genotype data (0,1,2 are all numeric).
+
+``` r
+   # Example: Small genotype matrix (Individuals x SNPs)
+   genotype_data <- matrix(c(0, 1, 2, 1, 1, 0), nrow = 2, ncol = 3, byrow = TRUE)
+   rownames(genotype_data) <- c("Line1", "Line2")
+   colnames(genotype_data) <- c("SNP1", "SNP2", "SNP3")
+   print(genotype_data)
+   class(genotype_data)
+   dim(genotype_data) # Get dimensions (rows, columns)
+   genotype_data[1, 2] # Access element row 1, column 2
+```
+
+3.  **Data Frame:** **The most important data structure for breeders!** Like a spreadsheet or table in R.
+
+    -   It's a collection of vectors (columns) of equal length.
+    -   **Crucially, columns can be of different data types!** (e.g., character ID, numeric yield, factor location).
+    -   Rows represent observations (e.g., plots, plants, samples).
+    -   Columns represent variables (e.g., ID, traits, treatments).
+
+    ``` r
+    # Create a simple breeding trial data frame
+    trial_data <- data.frame(
+     PlotID = c("A101", "A102", "B101", "B102"),
+     Variety = factor(c("ICARDA_Gold", "Local_Check", "ICARDA_RustResist", "ICARDA_Gold")),
+     Yield_kg_plot = c(5.2, 4.5, 6.1, 5.5),
+     Is_Resistant = c(TRUE, FALSE, TRUE, TRUE)
+    )
+
+    print(trial_data)
+    class(trial_data)
+    str(trial_data)       # Structure: Shows types of each column - VERY USEFUL!
+    head(trial_data)      # Show first few rows
+    summary(trial_data)   # Summary statistics for each column
+
+    # Access columns using $
+    trial_data$Yield_kg_plot
+    mean(trial_data$Yield_kg_plot) # Calculate mean of a column
+    ```
+
+    *(We will work extensively with data frames).*
+
+4.  **List:** A very flexible container that can hold *any* collection of R objects (vectors, matrices, data frames, even other lists), and they don't have to be the same type or length. Often used to return complex results from functions.
+
+``` r
+    analysis_results <- list(
+       description = "Yield Trial - Baku 2023",
+       raw_data = trial_data, # Include the data frame
+       significant_snps = c("SNP101", "SNP504"), # A character vector
+       model_parameters = list(threshold = 0.05, method = "MLM") # A nested list
+    )
+    print(analysis_results$description)
+    print(analysis_results$raw_data) # Access the data frame inside the list
+```

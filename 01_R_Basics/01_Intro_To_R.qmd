@@ -1,0 +1,60 @@
+# Module 1.1: Introduction to R - Your Breeding Data Analysis Tool
+
+### Introduction to R
+
+R is a powerful language for data manipulation, visualization, and statistical analysis. Think of R as a versatile calculator for data.
+
+-   **What is R?** Think of R as a powerful, specialized calculator combined with a programming language. It's designed specifically for handling data, performing statistical analyses, and creating informative graphs.
+-   **Why R for Breeding?**
+    -   **Free & Open Source:** Anyone can use it without cost.
+    -   **Powerful for Data:** Excellent at handling the types of large datasets we generate in breeding (phenotypes, genotypes).
+    -   **Cutting-Edge Statistics:** Many new statistical methods (like those for genomic selection or GWAS) are first available as R packages.
+    -   **Great Graphics:** Create publication-quality plots to visualize your results.
+    -   **Large Community:** Lots of help available online and specialized packages for genetics and breeding (like `rrBLUP` which we might see later).
+-   **R vs. Excel:** Excel is great for data entry and simple summaries, but R is much better for complex analysis, automation, reproducible research, and handling very large datasets.
+
+Try these examples in the RStudio Console:
+
+``` r
+# Basic arithmetic
+2 + 5
+10 - 3
+4 * 8
+100 / 4
+
+# Order of operations (like standard math)
+5 + 2 * 3   # Multiplication first
+(5 + 2) * 3 # Parentheses first
+
+# Built-in mathematical functions
+sqrt(16)    # Square root
+log(10)     # Natural logarithm
+log10(100)  # Base-10 logarithm
+```
+
+## Variables: Storing Information
+
+Variables are used to store information in R. You can think of them as containers for data. In R, you can create variables using the assignment operator `<-`. You can also use `=` for assignment, but `<-` is more common in R.
+
+Use the `<-` operator to assign and manipulate variables:
+
+``` r
+# Assign the value 5 to variable x
+x <- 5
+
+# Assign the result of 10 + 3 to variable y
+y <- 10 + 3
+
+# Print the value of x
+x
+
+# Use variables in calculations
+z <- x + y
+# Print the value of z
+z
+
+# Assign the name of a variety to a variable
+best_variety <- "ICARDA_Gold" # Text needs quotes ""
+
+print(average_yield)
+```

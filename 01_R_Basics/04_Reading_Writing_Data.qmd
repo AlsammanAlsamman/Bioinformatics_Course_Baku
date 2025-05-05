@@ -1,0 +1,121 @@
+# Module 1.4: Reading and Writing Data
+
+So far, we've created data inside R. But usually, your breeding data exists in external files, like Excel spreadsheets or CSV files. We need to get this data *into* R and save our results *out* of R.
+
+## Common Data File Formats
+
+-   **CSV (Comma Separated Values - `.csv`):** Plain text file where columns are separated by commas. Very common, easily readable by many programs (including R and Excel). **Often the best format for sharing data.**
+-   **TSV (Tab Separated Values - `.tsv`):** Similar to CSV, but uses tabs to separate columns.
+-   **Excel Files (`.xls`, `.xlsx`):** Native Microsoft Excel format. Can contain multiple sheets, formatting, formulas. Requires specific R packages to read/write.
+
+## Paths, Working Directory, and RStudio Projects (Best Practice!)
+
+R needs to know *where* to find your files.
+
+-   **Working Directory:** The default folder location R looks in. You can see it with `getwd()` and set it with `setwd("path/to/folder")`, but **setting it manually is usually bad practice** because it makes your code non-portable.
+-   **Absolute Path:** The full path from the root of your computer (e.g., `"C:/Users/YourName/Documents/BreedingData/trial1.csv"`). **Avoid this!** It breaks if you move folders or share your code.
+-   **Relative Path & RStudio Projects (RECOMMENDED):**
+    1.  Organize your work using an **RStudio Project**. Create one via `File -> New Project -> Existing Directory...` and select your main course folder (`course_project_baku`).
+    2.  When you open the `.Rproj` file, RStudio automatically sets the working directory to that project folder.
+    3.  Keep your data files *inside* the project folder, ideally in subdirectories like `data/raw` (original data) or `data/example` (cleaned data for examples).
+    4.  Refer to files using **relative paths** starting from the project root, like `"data/example/phenotypes.csv"`. This makes your analysis reproducible and easy to share!
+
+## Reading Data into R
+
+We'll use functions from the `readr` (for CSV/TSV) and `readxl` (for Excel) packages. Make sure they are installed (see Module 1.1).
+
+``` r
+# Load the necessary libraries
+library(readr)
+library(readxl)
+library(dplyr) # for glimpse
+
+# --- Reading a CSV file ---
+# Assumes you have a file 'sample_phenotypes.csv' in the 'data/example' folder
+# relative to your project root.
+pheno_file_path <- "data/example/sample_phenotypes.csv"
+
+# Check if file exists before trying to read (good habit)
+if (file.exists(pheno_file_path)) {
+  # Use read_csv from the readr package (generally preferred)
+  phenotype_data <- read_csv(pheno_file_path)
+
+  print("CSV data loaded successfully:")
+  head(phenotype_data)   # Look at the first 6 rows
+  glimpse(phenotype_data) # See column names and data types
+
+} else {
+  print(paste("Error: Phenotype file not found at", pheno_file_path))
+  phenotype_data <- NULL # Set to NULL if file not found
+}
+
+# Note: Base R has read.csv() - it works but readr::read_csv() is often faster
+# and handles data types more consistently (e.g., doesn't default strings to factors).
+
+# --- Reading an Excel file ---
+# Assumes you have 'sample_trial.xlsx' in 'data/example'
+excel_file_path <- "data/example/sample_trial.xlsx" # You'll need to create this file
+
+if (file.exists(excel_file_path)) {
+  # See what sheets are in the workbook
+  excel_sheets(excel_file_path)
+
+  # Read data from a specific sheet (e.g., "YieldData")
+  # yield_data_excel <- read_excel(excel_file_path, sheet = "YieldData")
+
+  # Or read by sheet number (first sheet is 1)
+  # yield_data_excel <- read_excel(excel_file_path, sheet = 1)
+
+  # print("Excel data loaded:")
+  # glimpse(yield_data_excel)
+
+} else {
+  print(paste("Warning: Example Excel file not found at", excel_file_path))
+}
+```
+
+-   **Always inspect your data after loading!** Use `head()`, `str()`, `glimpse()`, `summary()`. Did R read the column names correctly? Are the data types what you expected (numeric, character, etc.)?
+
+## Writing Data out of R
+
+After cleaning data or performing analysis, you'll want to save results.
+
+``` r
+# Load libraries if not already loaded
+library(readr)
+library(writexl)
+
+# Let's assume we filtered our phenotype data (from previous module example)
+# Make sure phenotype_data exists first
+if (!is.null(phenotype_data)) {
+  # Example: Create a subset of high yielders (Yield > 11, assuming Yield column exists)
+  # Check if Yield column exists before filtering
+  if ("Yield" %in% names(phenotype_data)) {
+     high_yielders <- phenotype_data[phenotype_data$Yield > 11, ] # Adjust threshold as needed
+
+     # --- Writing to a CSV file ---
+     # Use write_csv from readr. It doesn't write row numbers by default.
+     output_csv_file <- "output/high_yielders_output.csv"
+     write_csv(high_yielders, output_csv_file)
+     print(paste("High yield data saved to:", output_csv_file))
+
+     # --- Writing to an Excel file ---
+     # Use write_xlsx from writexl. Can write multiple data frames to different sheets.
+     output_excel_file <- "output/analysis_summary.xlsx"
+     sheets_to_write <- list(
+       HighYielders = high_yielders,
+       OriginalDataSummary = summary(phenotype_data) # Example: write a summary too
+       # Add other results data frames here
+     )
+     # write_xlsx(sheets_to_write, path = output_excel_file)
+     # print(paste("Analysis results saved to:", output_excel_file))
+
+  } else {
+    print("Column 'Yield' not found in phenotype_data. Cannot filter or write.")
+  }
+} else {
+  print("phenotype_data object does not exist. Cannot write data.")
+}
+```
+
+**Exercise:** If you have a simple Excel file with some breeding data (e.g., Plot ID, Variety, Yield), try reading it into R using `read_excel()`. Inspect the loaded data frame using `glimpse()`.
