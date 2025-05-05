@@ -211,5 +211,3 @@ ggsave(
 
 cat("Exercise plot saved to", file.path(output_dir, "height_variety_boxplot.png"), "\n")
 ```
-
-To use this, save the content as a file named (for example) `module-1.5-plotting.qmd` and render it using the Quarto CLI (`quarto render module-1.5-plotting.qmd`) or the Render button in RStudio.
