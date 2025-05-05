@@ -1,36 +1,76 @@
-name: CI
+# .github/workflows/ci.yml
+name: Render Quarto Project
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  build:
+  build-and-render:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }} # Recommended for package installs
 
     steps:
       - name: Check Out Repository
         uses: actions/checkout@v4
 
+      - name: Set up Quarto # Use the recommended action
+        uses: quarto-dev/setup-quarto@v2
+        # You can specify a version if needed:
+        # with:
+        #   version: 1.4.550
+
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release' # Or specify a version like '4.3.2'
 
-      - name: Install Quarto
-        run: |
-          wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.29/quarto-1.7.29-linux-amd64.deb
-          sudo dpkg -i quarto-1.4.4-linux-amd64.deb
+      # Optional but recommended: Cache R packages
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ runner.arch }}-${{ hashFiles('**/DESCRIPTION') }}-${{ hashFiles('**/renv.lock') }} # Adjust key as needed
+          restore-keys: |
+            ${{ runner.os }}-r-${{ runner.arch }}-
 
       - name: Install R Package Dependencies
-        run: |
-          Rscript -e 'install.packages(c("ggplot2", "dplyr"), repos="https://cloud.r-project.org")'
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::ggplot2
+            any::dplyr
+            # Add other required packages here, e.g., from DESCRIPTION file
+          # Or use this if you have a DESCRIPTION file:
+          # dependencies: |
+          #   Remotes, Imports, Suggests
 
-      - name: Render Quarto Document
-        run: |
-          quarto render 01_R_Basics/05_Simple_Plotting.qmd
+      # Remove this step if you DON'T need PDF output
+      # - name: Install TinyTeX (for PDF output)
+      #   run: quarto install tool tinytex
 
-      - name: Run Tests
+      - name: Render Quarto Project
         run: |
-          echo "Placeholder: Add commands to run tests if applicable."
+          # This assumes your project is defined by a _quarto.yml file
+          # in the repository root or a parent directory.
+          # Quarto will render based on _quarto.yml settings.
+          # Ensure _quarto.yml specifies `output-dir: output` if you
+          # specifically want the output in ./output instead of ./_site
+          quarto render
+        shell: bash
+
+      # Optional: If you have tests defined (e.g., using testthat)
+      # - name: Run Tests
+      #   run: |
+      #     Rscript -e 'devtools::test()' # Example using devtools/testthat
+
+      - name: Upload Rendered Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-site # Name of the artifact zip file
+          path: _site # Default Quarto output dir. Change to 'output' if you configured it in _quarto.yml
+          if-no-files-found: error # Fail if the output dir is missing
