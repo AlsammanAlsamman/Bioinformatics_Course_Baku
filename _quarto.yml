@@ -8,6 +8,7 @@ book:
   date: today
   date-format: "YYYY-MM-DD"
   chapters:
+    - 00_Cover/cover.qmd
     - index.qmd
     - part: "Introduction and Setup"
       chapters:
