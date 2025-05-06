@@ -1,4 +1,3 @@
-# .github/workflows/ci.yml
 name: Render Quarto Project
 
 on:
@@ -32,7 +31,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ runner.arch }}-${{ hashFiles('**/DESCRIPTION') }}-${{ hashFiles('**/renv.lock') }} # Adjust key as needed
+          key: ${{ runner.os }}-r-${{ runner.arch }}-${{ hashFiles('**/DESCRIPTION') }}-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-r-${{ runner.arch }}-
 
@@ -41,34 +40,33 @@ jobs:
         with:
           packages: |
             any::ggplot2
+            any::dplyr
             any::rmarkdown
             any::knitr
-            # Add other required packages here
-          # Or use this if you have a DESCRIPTION file:
+            any::readr
+            any::tidyr
+            any::tibble
+            any::stringr
+            any::lubridate
+            any::forcats
+            any::scales
+            any::plotly
+            any::quarto
+          # Optional: Uncomment to use a DESCRIPTION file
           # dependencies: |
           #   Remotes, Imports, Suggests
 
-      # --- This step is now ACTIVE ---
       - name: Install TinyTeX (for PDF output)
         run: quarto install tool tinytex
-      # --- End of activated step ---
 
       - name: Render Quarto Project
         run: |
-          # Renders the project based on _quarto.yml
-          # Ensure _quarto.yml exists and is configured correctly.
-          # Output defaults to _site unless output-dir is set.
           quarto render
         shell: bash
-
-      # Optional: Run tests if you have them
-      # - name: Run Tests
-      #   run: |
-      #     Rscript -e 'devtools::test()' # Example
 
       - name: Upload Rendered Output
         uses: actions/upload-artifact@v4
         with:
-          name: rendered-site # Name of the artifact zip file
-          path: _site # Change to 'output' if configured in _quarto.yml
-          if-no-files-found: error # Fail if the output dir is missing
+          name: rendered-site
+          path: _site
+          if-no-files-found: error
