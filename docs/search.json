@@ -1,0 +1,397 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Plant Breeding Data Analysis with R - Baku",
+    "section": "",
+    "text": "1 Welcome to the Plant Breeding Data Analysis Course\nTarget Audience: Breeders in Baku, Azerbaijan with minimal prior data analysis or programming experience. Collaboration with ICARDA.\nGoal: To provide a practical and understandable introduction to analyzing common breeding data types using the R programming language.\nThis course covers fundamental concepts in genetics and statistics relevant to breeding programs, alongside hands-on R coding sessions. We aim to build your confidence in handling your own data and interpreting results.\nPlease use the navigation menu (Table of Contents) to move through the course modules.\nLet’s begin!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to the Plant Breeding Data Analysis Course</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/00_Welcome.html",
+    "href": "00_Setup_Intro/00_Welcome.html",
+    "title": "2  Welcome and Course Overview",
+    "section": "",
+    "text": "2.1 Hello Baku Breeders!\nWelcome to this introductory course on data analysis for plant breeding, a collaboration with ICARDA. We are excited to guide you through the essential tools and concepts needed to make sense of your valuable breeding data using R.",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome and Course Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/00_Welcome.html#course-objectives",
+    "href": "00_Setup_Intro/00_Welcome.html#course-objectives",
+    "title": "2  Welcome and Course Overview",
+    "section": "2.2 Course Objectives",
+    "text": "2.2 Course Objectives\n\nLearn the fundamentals of the R programming language for data tasks.\nUnderstand basic concepts of genomic data.\nPerform basic data loading, cleaning, and quality control.\nGrasp key genetic concepts like allele frequency and relatedness (kinship).\nUnderstand the idea behind marker-trait association studies (GWAS).\nGet introduced to tools like GIGWA and basic AI applications.",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome and Course Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/00_Welcome.html#course-structure",
+    "href": "00_Setup_Intro/00_Welcome.html#course-structure",
+    "title": "2  Welcome and Course Overview",
+    "section": "2.3 Course Structure",
+    "text": "2.3 Course Structure\nThis course is divided into several modules, starting with setup and R basics, moving through data handling and genetic concepts, and ending with analysis methods and tools. Each module includes explanations and practical R exercises.\nNo prior programming experience is required!",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome and Course Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/01_Setup_R_RStudio.html",
+    "href": "00_Setup_Intro/01_Setup_R_RStudio.html",
+    "title": "3  Setting Up Your Environment: R and RStudio",
+    "section": "",
+    "text": "3.1 Why R and RStudio?",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment: R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/01_Setup_R_RStudio.html#why-r-and-rstudio",
+    "href": "00_Setup_Intro/01_Setup_R_RStudio.html#why-r-and-rstudio",
+    "title": "3  Setting Up Your Environment: R and RStudio",
+    "section": "",
+    "text": "R: A powerful, free programming language specifically designed for statistical computing and graphics. Widely used in academia and industry for data analysis, including genomics and breeding.\nRStudio: An excellent, free Integrated Development Environment (IDE) for R. It makes using R much easier with features like code highlighting, plot viewing, package management, and project organization.",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment: R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/01_Setup_R_RStudio.html#installation-steps",
+    "href": "00_Setup_Intro/01_Setup_R_RStudio.html#installation-steps",
+    "title": "3  Setting Up Your Environment: R and RStudio",
+    "section": "3.2 Installation Steps",
+    "text": "3.2 Installation Steps\n\nInstall R: Go to CRAN (the Comprehensive R Archive Network) and download the latest version for your operating system (Windows, macOS, Linux). Follow the installation instructions.\nInstall RStudio: Go to the Posit website and download the free RStudio Desktop version for your operating system. Install it after installing R.\nInstall Quarto: Go to Quarto’s website and download and install Quarto for your system. RStudio often bundles Quarto, but installing the latest version is good practice.\n(For PDF Output) Install LaTeX: Open RStudio, go to the Console panel, and type the following commands one by one, pressing Enter after each: ```r # Run these lines in the R Console # install.packages(“tinytex”) # Run only once if you dont have it # tinytex::install_tinytex() # Run only once to install LaTeX distribution ``` This might take a few minutes. If it fails, consult TinyTeX documentation or ask instructors.",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment: R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/01_Setup_R_RStudio.html#installing-r-packages-for-the-course",
+    "href": "00_Setup_Intro/01_Setup_R_RStudio.html#installing-r-packages-for-the-course",
+    "title": "3  Setting Up Your Environment: R and RStudio",
+    "section": "3.3 Installing R Packages for the Course",
+    "text": "3.3 Installing R Packages for the Course\nWe will use several add-on packages in R. You only need to install packages once. Use the R Console in RStudio.\n\n# --- Run this code chunk in the R Console --- List of packages we will likely need:\n\npackages_to_install &lt;- c( \"tidyverse\", # For data manipulation (dplyr, tidyr) and plotting (ggplot2)\n                    \"readxl\", # For reading Excel files (.xlsx)\n                    \"writexl\", # For writing Excel files (.xlsx)\n                    \"rrBLUP\", # For Kinship calculation and basic GWAS\n                    \"qqman\", # For creating Manhattan and QQ plots for GWAS\n                    \"vcfR\"\n                    )",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment: R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "00_Setup_Intro/01_Setup_R_RStudio.html#quick-rstudio-tour",
+    "href": "00_Setup_Intro/01_Setup_R_RStudio.html#quick-rstudio-tour",
+    "title": "3  Setting Up Your Environment: R and RStudio",
+    "section": "3.4 Quick RStudio Tour",
+    "text": "3.4 Quick RStudio Tour\n(We will cover this live, but key windows include: Console, Script Editor/Notebook, Environment/History, Files/Plots/Packages/Help/Viewer). Familiarize yourself with these panes.",
+    "crumbs": [
+      "Introduction and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment: R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/01_Intro_To_R.html",
+    "href": "01_R_Basics/01_Intro_To_R.html",
+    "title": "4  Module 1.1: Introduction to R - Your Breeding Data Analysis Tool",
+    "section": "",
+    "text": "4.0.1 Introduction to R\nR is a powerful language for data manipulation, visualization, and statistical analysis. Think of R as a versatile calculator for data.\nTry these examples in the RStudio Console:",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/01_Intro_To_R.html#variables-storing-information",
+    "href": "01_R_Basics/01_Intro_To_R.html#variables-storing-information",
+    "title": "4  Module 1.1: Introduction to R - Your Breeding Data Analysis Tool",
+    "section": "4.1 Variables: Storing Information",
+    "text": "4.1 Variables: Storing Information\nVariables are used to store information in R. You can think of them as containers for data. In R, you can create variables using the assignment operator &lt;-. You can also use = for assignment, but &lt;- is more common in R.\nUse the &lt;- operator to assign and manipulate variables:\n# Assign the value 5 to variable x\nx &lt;- 5\n\n# Assign the result of 10 + 3 to variable y\ny &lt;- 10 + 3\n\n# Print the value of x\nx\n\n# Use variables in calculations\nz &lt;- x + y\n# Print the value of z\nz\n\n# Assign the name of a variety to a variable\nbest_variety &lt;- \"ICARDA_Gold\" # Text needs quotes \"\"\n\nprint(average_yield)",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/02_Data_Types_Structures.html",
+    "href": "01_R_Basics/02_Data_Types_Structures.html",
+    "title": "5  Module 1.2: R Data Types and Structures - The Building Blocks",
+    "section": "",
+    "text": "5.1 Introduction: Types and Structures\nThink of data like building blocks:\nUnderstanding these is fundamental to working with data in R.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Module 1.2: R Data Types and Structures - The Building Blocks</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/02_Data_Types_Structures.html#introduction-types-and-structures",
+    "href": "01_R_Basics/02_Data_Types_Structures.html#introduction-types-and-structures",
+    "title": "5  Module 1.2: R Data Types and Structures - The Building Blocks",
+    "section": "",
+    "text": "Data Types: The kind of block (e.g., numeric brick, text brick, true/false switch).\nData Structures: How you organize those blocks (e.g., a single row of bricks, a flat grid, a complex box holding different things).",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Module 1.2: R Data Types and Structures - The Building Blocks</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/02_Data_Types_Structures.html#basic-data-types",
+    "href": "01_R_Basics/02_Data_Types_Structures.html#basic-data-types",
+    "title": "5  Module 1.2: R Data Types and Structures - The Building Blocks",
+    "section": "5.2 Basic Data Types",
+    "text": "5.2 Basic Data Types\nR needs to know what kind of information it’s dealing with.\n\nNumeric: Represents numbers. Can be integers (whole numbers) or doubles (with decimals). Used for measurements like yield, height, counts.\n\n    yield &lt;- 75.5     # Double (decimal)\n    num_plots &lt;- 120  # Integer (whole number)\n    class(yield)      # Check the type\n    class(num_plots)  # Often stored as 'numeric' (double) by default\n\nCharacter: Represents text (strings). Always enclose text in double (\") or single (') quotes. Used for IDs, names, descriptions.\n\n    variety_name &lt;- \"ICARDA_RustResist\"\n    plot_id &lt;- 'Plot_A101'\n    class(variety_name)\n\nLogical: Represents TRUE or FALSE values. Often the result of comparisons. Crucial for filtering data.\n\n   is_resistant &lt;- TRUE\n   yield &gt; 80 # This comparison results in a logical value\n   class(is_resistant)\n\nFactor: Special type for categorical data (variables with distinct levels or groups). R stores them efficiently using underlying numbers but displays the text labels. Very important for statistical models and plotting.\n\n    # Example: Different locations in a trial\n    locations &lt;- c(\"Baku\", \"Ganja\", \"Baku\", \"Sheki\", \"Ganja\")\n    location_factor &lt;- factor(locations)\n\n    print(location_factor) # Shows levels\n    class(location_factor)\n    levels(location_factor) # See the unique categories",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Module 1.2: R Data Types and Structures - The Building Blocks</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/02_Data_Types_Structures.html#key-data-structures",
+    "href": "01_R_Basics/02_Data_Types_Structures.html#key-data-structures",
+    "title": "5  Module 1.2: R Data Types and Structures - The Building Blocks",
+    "section": "5.3 Key Data Structures",
+    "text": "5.3 Key Data Structures\nHow R organizes collections of data:\n\nVector: The most basic structure! A sequence (ordered list) containing elements of the same data type. Created using c() (combine function).\n\n    # Vector of plot yields (numeric)\n    plot_yields &lt;- c(75.5, 81.2, 78.9, 85.0)\n    # Vector of variety names (character)\n    plot_varieties &lt;- c(\"ICARDA_Gold\", \"Local_Check\", \"ICARDA_Gold\", \"ICARDA_RustResist\")\n    # Vector of resistance status (logical)\n    plot_resistance &lt;- c(TRUE, FALSE, TRUE, TRUE)\n\n    plot_yields[1]       # Access the first element (Indexing starts at 1!)\n    plot_yields[2:4]     # Access elements 2 through 4\n    length(plot_yields)  # Get the number of elements\n*Important:* If you mix types in `c()`, R will force them into a single common type (usually character).\n        mixed_vector &lt;- c(10, \"VarietyA\", TRUE)\n        print(mixed_vector) # All become character strings!\n        class(mixed_vector)\n\nMatrix: A two-dimensional grid (rows and columns) where all elements must be of the same data type. Useful for genotype data (0,1,2 are all numeric).\n\n   # Example: Small genotype matrix (Individuals x SNPs)\n   genotype_data &lt;- matrix(c(0, 1, 2, 1, 1, 0), nrow = 2, ncol = 3, byrow = TRUE)\n   rownames(genotype_data) &lt;- c(\"Line1\", \"Line2\")\n   colnames(genotype_data) &lt;- c(\"SNP1\", \"SNP2\", \"SNP3\")\n   print(genotype_data)\n   class(genotype_data)\n   dim(genotype_data) # Get dimensions (rows, columns)\n   genotype_data[1, 2] # Access element row 1, column 2\n\nData Frame: The most important data structure for breeders! Like a spreadsheet or table in R.\n\nIt’s a collection of vectors (columns) of equal length.\nCrucially, columns can be of different data types! (e.g., character ID, numeric yield, factor location).\nRows represent observations (e.g., plots, plants, samples).\nColumns represent variables (e.g., ID, traits, treatments).\n\n# Create a simple breeding trial data frame\ntrial_data &lt;- data.frame(\n PlotID = c(\"A101\", \"A102\", \"B101\", \"B102\"),\n Variety = factor(c(\"ICARDA_Gold\", \"Local_Check\", \"ICARDA_RustResist\", \"ICARDA_Gold\")),\n Yield_kg_plot = c(5.2, 4.5, 6.1, 5.5),\n Is_Resistant = c(TRUE, FALSE, TRUE, TRUE)\n)\n\nprint(trial_data)\nclass(trial_data)\nstr(trial_data)       # Structure: Shows types of each column - VERY USEFUL!\nhead(trial_data)      # Show first few rows\nsummary(trial_data)   # Summary statistics for each column\n\n# Access columns using $\ntrial_data$Yield_kg_plot\nmean(trial_data$Yield_kg_plot) # Calculate mean of a column\n(We will work extensively with data frames).\nList: A very flexible container that can hold any collection of R objects (vectors, matrices, data frames, even other lists), and they don’t have to be the same type or length. Often used to return complex results from functions.\n\n    analysis_results &lt;- list(\n       description = \"Yield Trial - Baku 2023\",\n       raw_data = trial_data, # Include the data frame\n       significant_snps = c(\"SNP101\", \"SNP504\"), # A character vector\n       model_parameters = list(threshold = 0.05, method = \"MLM\") # A nested list\n    )\n    print(analysis_results$description)\n    print(analysis_results$raw_data) # Access the data frame inside the list",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Module 1.2: R Data Types and Structures - The Building Blocks</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/03_Basic_Operations.html",
+    "href": "01_R_Basics/03_Basic_Operations.html",
+    "title": "6  Module 1.3: Basic Operations in R",
+    "section": "",
+    "text": "6.1 Arithmetic Operations (Review)\nNow that we know about data types and structures, let’s see how to manipulate them.\nWorks on numbers and numeric vectors/matrices element-wise.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Module 1.3: Basic Operations in R</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/03_Basic_Operations.html#arithmetic-operations-review",
+    "href": "01_R_Basics/03_Basic_Operations.html#arithmetic-operations-review",
+    "title": "6  Module 1.3: Basic Operations in R",
+    "section": "",
+    "text": "yield1 &lt;- 5.2\nyield2 &lt;- 6.1\n\nyield1 + yield2\nyield1 * 10 # Scale up (e.g., plot yield to estimated per area)\n\n# On vectors\nplot_yields &lt;- c(5.2, 4.5, 6.1, 5.5)\nplot_yields + 0.5 # Add 0.5 to every plot's yield\nplot_yields * 1000 / 10 # e.g. kg/plot to kg/ha if plot area = 10 sqm\n\n# Other operators: ^ (power), %% (remainder)\n2^3 # 2 to the power of 3\n10 %% 3 # Remainder of 10 divided by 3 is 1",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Module 1.3: Basic Operations in R</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/03_Basic_Operations.html#logical-comparisons-and-operators",
+    "href": "01_R_Basics/03_Basic_Operations.html#logical-comparisons-and-operators",
+    "title": "6  Module 1.3: Basic Operations in R",
+    "section": "6.2 Logical Comparisons and Operators",
+    "text": "6.2 Logical Comparisons and Operators\nUsed to ask TRUE/FALSE questions about our data. Essential for filtering.\n\nComparison Operators:\n\n&gt; : Greater than\n&lt; : Less than\n&gt;=: Greater than or equal to\n&lt;=: Less than or equal to\n==: Exactly equal to (TWO equal signs! Very common mistake to use just one =)\n!=: Not equal to\n\nLogical Operators (Combine TRUE/FALSE):\n\n& : AND (both sides must be TRUE)\n| : OR (at least one side must be TRUE)\n! : NOT (reverses TRUE to FALSE, FALSE to TRUE)\n\n\nyield &lt;- 5.2\nmin_acceptable_yield &lt;- 5.0\nvariety &lt;- \"ICARDA_Gold\"\n\n# Comparisons\nyield &gt; min_acceptable_yield # Is yield acceptable? TRUE\nvariety == \"Local_Check\"    # Is it the local check? FALSE\nvariety != \"Local_Check\"    # Is it NOT the local check? TRUE\n\n# On vectors\nplot_yields &lt;- c(5.2, 4.5, 6.1, 5.5)\nplot_yields &gt; 5.0 # Which plots yielded above 5.0? [TRUE FALSE TRUE TRUE]\n\nplot_varieties &lt;- c(\"ICARDA_Gold\", \"Local_Check\", \"ICARDA_RustResist\", \"ICARDA_Gold\")\nplot_varieties == \"ICARDA_Gold\" # Which plots are ICARDA_Gold? [TRUE FALSE FALSE TRUE]\n\n# Combining conditions\n# Find plots where yield &gt; 5.0 AND variety is ICARDA_Gold\n(plot_yields &gt; 5.0) & (plot_varieties == \"ICARDA_Gold\") # [TRUE FALSE FALSE TRUE]\n\n# Find plots where yield &gt; 6.0 OR variety is Local_Check\n(plot_yields &gt; 6.0) | (plot_varieties == \"Local_Check\") # [FALSE TRUE TRUE FALSE]",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Module 1.3: Basic Operations in R</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/03_Basic_Operations.html#vectorization-rs-superpower",
+    "href": "01_R_Basics/03_Basic_Operations.html#vectorization-rs-superpower",
+    "title": "6  Module 1.3: Basic Operations in R",
+    "section": "6.3 Vectorization: R’s Superpower",
+    "text": "6.3 Vectorization: R’s Superpower\nMany R operations are vectorized, meaning they automatically apply to each element of a vector without needing you to write a loop. This makes R code concise and efficient. We’ve already seen this with arithmetic (plot_yields + 0.5) and comparisons (plot_yields &gt; 5.0).\nFunctions like mean(), sum(), min(), max(), sd() (standard deviation), length() also work naturally on vectors:\nplot_yields &lt;- c(5.2, 4.5, 6.1, 5.5)\n\nmean(plot_yields)\nsd(plot_yields)\nsum(plot_yields &gt; 5.0) # How many plots yielded &gt; 5.0? (TRUE=1, FALSE=0)\nlength(plot_yields) # How many plots?",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Module 1.3: Basic Operations in R</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/03_Basic_Operations.html#working-with-data-frames-indexing-and-filtering",
+    "href": "01_R_Basics/03_Basic_Operations.html#working-with-data-frames-indexing-and-filtering",
+    "title": "6  Module 1.3: Basic Operations in R",
+    "section": "6.4 Working with Data Frames (Indexing and Filtering)",
+    "text": "6.4 Working with Data Frames (Indexing and Filtering)\nThis is crucial for selecting specific data from your tables.\nLet’s use the trial_data data frame from the previous section:\ntrial_data &lt;- data.frame(\n  PlotID = c(\"A101\", \"A102\", \"B101\", \"B102\"),\n  Variety = factor(c(\"ICARDA_Gold\", \"Local_Check\", \"ICARDA_RustResist\", \"ICARDA_Gold\")),\n  Yield_kg_plot = c(5.2, 4.5, 6.1, 5.5),\n  Is_Resistant = c(TRUE, FALSE, TRUE, TRUE)\n)\n\nAccessing Columns: Use $ (most common) or [[ ]]. r     trial_data$Variety     trial_data[[\"Yield_kg_plot\"]]     mean(trial_data$Yield_kg_plot)\nAccessing Rows/Columns/Cells using [row, column]:\n# Get the value in Row 2, Column 3\ntrial_data[2, 3] # Should be 4.5\n\n# Get the entire Row 1 (returns a data frame)\ntrial_data[1, ]\n\n# Get the entire Column 2 (Variety column, returns a vector/factor)\ntrial_data[, 2]\n# Get Columns 1 and 3 (PlotID and Yield)\ntrial_data[, c(1, 3)] # Use c() for multiple column indices\ntrial_data[, c(\"PlotID\", \"Yield_kg_plot\")] # Can also use column names\nFiltering Rows Based on Conditions (VERY IMPORTANT): Use a logical condition inside the row part of the square brackets.\n# Select rows where Yield_kg_plot is greater than 5.0\nhigh_yield_plots &lt;- trial_data[trial_data$Yield_kg_plot &gt; 5.0, ]\nprint(high_yield_plots)\n\n# Select rows where Variety is \"ICARDA_Gold\"\nicarda_gold_plots &lt;- trial_data[trial_data$Variety == \"ICARDA_Gold\", ]\nprint(icarda_gold_plots)\n\n# Select rows where Variety is \"ICARDA_Gold\" AND yield &gt; 5.0\n# (We generated the logical vector for this earlier)\ncondition &lt;- (trial_data$Variety == \"ICARDA_Gold\") & (trial_data$Yield_kg_plot &gt; 5.0)\nprint(condition) # Shows [TRUE FALSE FALSE TRUE]\nselected_plots &lt;- trial_data[condition, ]\nprint(selected_plots)\n\n# Select rows where the variety is resistant\nresistant_plots &lt;- trial_data[trial_data$Is_Resistant == TRUE, ] # Or just trial_data[trial_data$Is_Resistant, ]\nprint(resistant_plots)\n\nExercise: Select the data for the ‘Local_Check’ variety from the trial_data data frame. Calculate its yield.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Module 1.3: Basic Operations in R</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/04_Reading_Writing_Data.html",
+    "href": "01_R_Basics/04_Reading_Writing_Data.html",
+    "title": "7  Module 1.4: Reading and Writing Data",
+    "section": "",
+    "text": "7.1 Common Data File Formats\nSo far, we’ve created data inside R. But usually, your breeding data exists in external files, like Excel spreadsheets or CSV files. We need to get this data into R and save our results out of R.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Module 1.4: Reading and Writing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/04_Reading_Writing_Data.html#common-data-file-formats",
+    "href": "01_R_Basics/04_Reading_Writing_Data.html#common-data-file-formats",
+    "title": "7  Module 1.4: Reading and Writing Data",
+    "section": "",
+    "text": "CSV (Comma Separated Values - .csv): Plain text file where columns are separated by commas. Very common, easily readable by many programs (including R and Excel). Often the best format for sharing data.\nTSV (Tab Separated Values - .tsv): Similar to CSV, but uses tabs to separate columns.\nExcel Files (.xls, .xlsx): Native Microsoft Excel format. Can contain multiple sheets, formatting, formulas. Requires specific R packages to read/write.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Module 1.4: Reading and Writing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/04_Reading_Writing_Data.html#paths-working-directory-and-rstudio-projects-best-practice",
+    "href": "01_R_Basics/04_Reading_Writing_Data.html#paths-working-directory-and-rstudio-projects-best-practice",
+    "title": "7  Module 1.4: Reading and Writing Data",
+    "section": "7.2 Paths, Working Directory, and RStudio Projects (Best Practice!)",
+    "text": "7.2 Paths, Working Directory, and RStudio Projects (Best Practice!)\nR needs to know where to find your files.\n\nWorking Directory: The default folder location R looks in. You can see it with getwd() and set it with setwd(\"path/to/folder\"), but setting it manually is usually bad practice because it makes your code non-portable.\nAbsolute Path: The full path from the root of your computer (e.g., \"C:/Users/YourName/Documents/BreedingData/trial1.csv\"). Avoid this! It breaks if you move folders or share your code.\nRelative Path & RStudio Projects (RECOMMENDED):\n\nOrganize your work using an RStudio Project. Create one via File -&gt; New Project -&gt; Existing Directory... and select your main course folder (course_project_baku).\nWhen you open the .Rproj file, RStudio automatically sets the working directory to that project folder.\nKeep your data files inside the project folder, ideally in subdirectories like data/raw (original data) or data/example (cleaned data for examples).\nRefer to files using relative paths starting from the project root, like \"data/example/phenotypes.csv\". This makes your analysis reproducible and easy to share!",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Module 1.4: Reading and Writing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/04_Reading_Writing_Data.html#reading-data-into-r",
+    "href": "01_R_Basics/04_Reading_Writing_Data.html#reading-data-into-r",
+    "title": "7  Module 1.4: Reading and Writing Data",
+    "section": "7.3 Reading Data into R",
+    "text": "7.3 Reading Data into R\nWe’ll use functions from the readr (for CSV/TSV) and readxl (for Excel) packages. Make sure they are installed (see Module 1.1).\n# Load the necessary libraries\nlibrary(readr)\nlibrary(readxl)\nlibrary(dplyr) # for glimpse\n\n# --- Reading a CSV file ---\n# Assumes you have a file 'sample_phenotypes.csv' in the 'data/example' folder\n# relative to your project root.\npheno_file_path &lt;- \"data/example/sample_phenotypes.csv\"\n\n# Check if file exists before trying to read (good habit)\nif (file.exists(pheno_file_path)) {\n  # Use read_csv from the readr package (generally preferred)\n  phenotype_data &lt;- read_csv(pheno_file_path)\n\n  print(\"CSV data loaded successfully:\")\n  head(phenotype_data)   # Look at the first 6 rows\n  glimpse(phenotype_data) # See column names and data types\n\n} else {\n  print(paste(\"Error: Phenotype file not found at\", pheno_file_path))\n  phenotype_data &lt;- NULL # Set to NULL if file not found\n}\n\n# Note: Base R has read.csv() - it works but readr::read_csv() is often faster\n# and handles data types more consistently (e.g., doesn't default strings to factors).\n\n# --- Reading an Excel file ---\n# Assumes you have 'sample_trial.xlsx' in 'data/example'\nexcel_file_path &lt;- \"data/example/sample_trial.xlsx\" # You'll need to create this file\n\nif (file.exists(excel_file_path)) {\n  # See what sheets are in the workbook\n  excel_sheets(excel_file_path)\n\n  # Read data from a specific sheet (e.g., \"YieldData\")\n  # yield_data_excel &lt;- read_excel(excel_file_path, sheet = \"YieldData\")\n\n  # Or read by sheet number (first sheet is 1)\n  # yield_data_excel &lt;- read_excel(excel_file_path, sheet = 1)\n\n  # print(\"Excel data loaded:\")\n  # glimpse(yield_data_excel)\n\n} else {\n  print(paste(\"Warning: Example Excel file not found at\", excel_file_path))\n}\n\nAlways inspect your data after loading! Use head(), str(), glimpse(), summary(). Did R read the column names correctly? Are the data types what you expected (numeric, character, etc.)?",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Module 1.4: Reading and Writing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/04_Reading_Writing_Data.html#writing-data-out-of-r",
+    "href": "01_R_Basics/04_Reading_Writing_Data.html#writing-data-out-of-r",
+    "title": "7  Module 1.4: Reading and Writing Data",
+    "section": "7.4 Writing Data out of R",
+    "text": "7.4 Writing Data out of R\nAfter cleaning data or performing analysis, you’ll want to save results.\n# Load libraries if not already loaded\nlibrary(readr)\nlibrary(writexl)\n\n# Let's assume we filtered our phenotype data (from previous module example)\n# Make sure phenotype_data exists first\nif (!is.null(phenotype_data)) {\n  # Example: Create a subset of high yielders (Yield &gt; 11, assuming Yield column exists)\n  # Check if Yield column exists before filtering\n  if (\"Yield\" %in% names(phenotype_data)) {\n     high_yielders &lt;- phenotype_data[phenotype_data$Yield &gt; 11, ] # Adjust threshold as needed\n\n     # --- Writing to a CSV file ---\n     # Use write_csv from readr. It doesn't write row numbers by default.\n     output_csv_file &lt;- \"output/high_yielders_output.csv\"\n     write_csv(high_yielders, output_csv_file)\n     print(paste(\"High yield data saved to:\", output_csv_file))\n\n     # --- Writing to an Excel file ---\n     # Use write_xlsx from writexl. Can write multiple data frames to different sheets.\n     output_excel_file &lt;- \"output/analysis_summary.xlsx\"\n     sheets_to_write &lt;- list(\n       HighYielders = high_yielders,\n       OriginalDataSummary = summary(phenotype_data) # Example: write a summary too\n       # Add other results data frames here\n     )\n     # write_xlsx(sheets_to_write, path = output_excel_file)\n     # print(paste(\"Analysis results saved to:\", output_excel_file))\n\n  } else {\n    print(\"Column 'Yield' not found in phenotype_data. Cannot filter or write.\")\n  }\n} else {\n  print(\"phenotype_data object does not exist. Cannot write data.\")\n}\nExercise: If you have a simple Excel file with some breeding data (e.g., Plot ID, Variety, Yield), try reading it into R using read_excel(). Inspect the loaded data frame using glimpse().",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Module 1.4: Reading and Writing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/05_Simple_Plotting.html",
+    "href": "01_R_Basics/05_Simple_Plotting.html",
+    "title": "8  Why Visualize Your Data?",
+    "section": "",
+    "text": "8.1 Introducing ggplot2: The Grammar of Graphics\n“A picture is worth a thousand words” - this is especially true for data! Plots help us to:\nR has basic plotting functions, but we will focus on the ggplot2 package, which is part of the tidyverse. It’s extremely powerful and flexible for creating beautiful, publication-quality graphics.\nggplot2 is based on the Grammar of Graphics. The idea is to build plots layer by layer:",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Why Visualize Your Data?</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/05_Simple_Plotting.html#introducing-ggplot2-the-grammar-of-graphics",
+    "href": "01_R_Basics/05_Simple_Plotting.html#introducing-ggplot2-the-grammar-of-graphics",
+    "title": "8  Why Visualize Your Data?",
+    "section": "",
+    "text": "ggplot() function: Start the plot. You provide:\n\ndata: The data frame containing your variables.\nmapping = aes(...): Aesthetic mappings. This tells ggplot how variables in your data map to visual properties of the plot (e.g., map Yield to the y-axis, Height to the x-axis, Variety to color).\n\ngeom_ functions: Add geometric layers to actually display the data. Examples:\n\ngeom_point(): Creates a scatter plot.\ngeom_histogram(): Creates a histogram.\ngeom_boxplot(): Creates box-and-whisker plots.\ngeom_line(): Creates lines.\ngeom_bar(): Creates bar charts.\n\nOther functions: Add labels (labs()), change themes (theme_bw(), theme_minimal()), split plots into facets (facet_wrap()), customize scales, etc.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Why Visualize Your Data?</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/05_Simple_Plotting.html#lets-make-some-plots",
+    "href": "01_R_Basics/05_Simple_Plotting.html#lets-make-some-plots",
+    "title": "8  Why Visualize Your Data?",
+    "section": "8.2 Let’s Make Some Plots!",
+    "text": "8.2 Let’s Make Some Plots!\nFirst, load the necessary libraries:\n\n# Load necessary libraries\nlibrary(ggplot2)\nlibrary(dplyr) # Often used with ggplot2 for data prep\n\nNow, let’s create a sample breeding data frame for plotting.\n\nset.seed(123) # for reproducible random numbers\nbreeding_plot_data &lt;-\n  tibble(\n    PlotID = paste0(\"P\", 101:120),\n    Variety = factor(rep(c(\"ICARDA_A\", \"ICARDA_B\", \"Check_1\", \"Check_2\"), each = 5)),\n    Location = factor(rep(c(\"Baku\", \"Ganja\"), each = 10)),\n    Yield = rnorm(20, mean = rep(c(6, 7, 5, 5.5), each = 5), sd = 0.8),\n    Height = rnorm(20, mean = rep(c(90, 110, 85, 88), each = 5), sd = 5)\n  )\n\n# Take a quick look at the data structure\nglimpse(breeding_plot_data)\n\nRows: 20\nColumns: 5\n$ PlotID   &lt;chr&gt; \"P101\", \"P102\", \"P103\", \"P104\", \"P105\", \"P106\", \"P107\", \"P108…\n$ Variety  &lt;fct&gt; ICARDA_A, ICARDA_A, ICARDA_A, ICARDA_A, ICARDA_A, ICARDA_B, I…\n$ Location &lt;fct&gt; Baku, Baku, Baku, Baku, Baku, Baku, Baku, Baku, Baku, Baku, G…\n$ Yield    &lt;dbl&gt; 5.551619, 5.815858, 7.246967, 6.056407, 6.103430, 8.372052, 7…\n$ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.56653, …\n\n\n\n8.2.1 1. Scatter Plot: Relationship between Yield and Height\nSee if taller plants tend to have higher yield in this dataset.\n\n# 1. ggplot(): data is breeding_plot_data, map Height to x, Yield to y\n# 2. geom_point(): Add points layer\n# 3. labs() and theme_bw(): Add labels and theme\nplot1 &lt;-\n  ggplot(data = breeding_plot_data, mapping = aes(x = Height, y = Yield)) +\n  geom_point() +\n  labs(\n    title = \"Relationship between Plant Height and Yield\",\n    x = \"Plant Height (cm)\",\n    y = \"Yield (kg/plot)\",\n    caption = \"Sample Data\"\n  ) +\n  theme_bw() # Use a clean black and white theme\n\n# Display the plot\nplot1\n\n\n\n\nRelationship between Plant Height and Yield.\n\n\n\n\nLet’s color the points by Variety:\n\n# Map 'color' aesthetic to the Variety column\n# Adjust point size and transparency for better visibility\nplot2 &lt;-\n  ggplot(data = breeding_plot_data, mapping = aes(x = Height, y = Yield, color = Variety)) +\n  geom_point(size = 2.5, alpha = 0.8) + # Make points slightly bigger, semi-transparent\n  labs(\n    title = \"Height vs. Yield by Variety\",\n    x = \"Plant Height (cm)\",\n    y = \"Yield (kg/plot)\"\n  ) +\n  theme_minimal() # Use a different theme\n\n# Display the plot\nplot2\n\n\n\n\nHeight vs. Yield by Variety, colored by Variety.\n\n\n\n\n\n\n8.2.2 2. Histogram: Distribution of Yield\nSee the frequency of different yield values.\n\n# 1. ggplot(): data, map Yield to x-axis\n# 2. geom_histogram(): Add histogram layer. Adjust 'binwidth' or 'bins'.\n# 3. labs() and theme_classic(): Add labels and theme\nplot3 &lt;-\n  ggplot(data = breeding_plot_data, mapping = aes(x = Yield)) +\n  geom_histogram(binwidth = 0.5, fill = \"lightblue\", color = \"black\") + # Specify binwidth, fill, and outline color\n  labs(\n    title = \"Distribution of Plot Yields\",\n    x = \"Yield (kg/plot)\",\n    y = \"Frequency (Number of Plots)\"\n  ) +\n  theme_classic()\n\n# Display the plot\nplot3\n\n\n\n\nDistribution of Plot Yields.\n\n\n\n\n\n\n8.2.3 3. Box Plot: Compare Yield across Locations\nAre yields different in Baku vs. Ganja? Box plots are great for comparing distributions across groups.\n\n# 1. ggplot(): data, map Location (categorical) to x, Yield (numeric) to y\n# 2. geom_boxplot(): Add boxplot layer. Map 'fill' to Location for color.\n# 3. labs() and theme_light(): Add labels and theme\n# 4. theme(): Customize theme elements (e.g., remove legend)\nplot4 &lt;-\n  ggplot(data = breeding_plot_data, mapping = aes(x = Location, y = Yield, fill = Location)) +\n  geom_boxplot() +\n  labs(\n    title = \"Yield Comparison by Location\",\n    x = \"Location\",\n    y = \"Yield (kg/plot)\"\n  ) +\n  theme_light() +\n  theme(legend.position = \"none\") # Hide legend if coloring is obvious from x-axis\n\n# Display the plot\nplot4\n\n\n\n\nYield Comparison by Location.\n\n\n\n\nBox plot anatomy: The box shows the interquartile range (IQR, middle 50% of data), the line inside is the median, whiskers extend typically 1.5*IQR, points beyond are potential outliers.",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Why Visualize Your Data?</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/05_Simple_Plotting.html#saving-your-plots",
+    "href": "01_R_Basics/05_Simple_Plotting.html#saving-your-plots",
+    "title": "8  Why Visualize Your Data?",
+    "section": "8.3 Saving Your Plots",
+    "text": "8.3 Saving Your Plots\nUse the ggsave() function after you’ve created a ggplot object (like plot1, plot2, etc.).\n\n# Make sure the 'output/figures' directory exists\n# The 'recursive = TRUE' creates parent directories if needed\noutput_dir &lt;- \"output/figures\"\nif (!dir.exists(output_dir)) {\n  dir.create(output_dir, recursive = TRUE)\n}\n\n# Save the height vs yield scatter plot (plot2)\nggsave(\n  filename = file.path(output_dir, \"height_yield_scatter.png\"), # Use file.path for robust paths\n  plot = plot2,                               # The plot object to save\n  width = 7,                                  # Width in inches\n  height = 5,                                 # Height in inches\n  dpi = 300                                   # Resolution (dots per inch)\n)\n\n# You can save in other formats too, like PDF:\n# ggsave(\n#   filename = file.path(output_dir, \"yield_distribution.pdf\"),\n#   plot = plot3,\n#   width = 6,\n#   height = 4\n# )\n\ncat(\"Plot saved to\", file.path(output_dir, \"height_yield_scatter.png\"), \"\\n\")\n\nPlot saved to output/figures/height_yield_scatter.png",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Why Visualize Your Data?</span>"
+    ]
+  },
+  {
+    "objectID": "01_R_Basics/05_Simple_Plotting.html#exercise",
+    "href": "01_R_Basics/05_Simple_Plotting.html#exercise",
+    "title": "8  Why Visualize Your Data?",
+    "section": "8.4 Exercise",
+    "text": "8.4 Exercise\nCreate a box plot comparing Plant Height (Height) across the different Varieties (Variety) in the breeding_plot_data. Save the plot as a PNG file named height_variety_boxplot.png in the output/figures directory.\n\n# Exercise: Box plot comparing Plant Height across Varieties\nplot5 &lt;-\n  ggplot(data = breeding_plot_data, mapping = aes(x = Variety, y = Height, fill = Variety)) +\n  geom_boxplot() +\n  labs(\n    title = \"Plant Height Comparison by Variety\",\n    x = \"Variety\",\n    y = \"Plant Height (cm)\"\n   ) +\n  theme_light() +\n  theme(legend.position = \"none\")\n\n# Display the new plot\nplot5\n\n\n\n\nPlant Height Comparison by Variety.\n\n\n\n\n\n# Ensure output directory exists\noutput_dir &lt;- \"output/figures\"\nif (!dir.exists(output_dir)) {\n  dir.create(output_dir, recursive = TRUE)\n}\n\n# Save the box plot as a PNG file\nggsave(\n  filename = file.path(output_dir, \"height_variety_boxplot.png\"),\n  plot = plot5,\n  width = 7,\n  height = 5,\n  dpi = 300\n)\n\ncat(\"Exercise plot saved to\", file.path(output_dir, \"height_variety_boxplot.png\"), \"\\n\")\n\nExercise plot saved to output/figures/height_variety_boxplot.png",
+    "crumbs": [
+      "R Programming Fundamentals",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Why Visualize Your Data?</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "",
+    "text": "9.1 Introduction to the Dataset\nIn this module, we’ll learn how to load typical phenotypic data into R. We’ll use a real-world example: data from a study on 275 barley accessions conducted at ICARDA in 2019. This dataset contains various measurements related to agronomic traits, grain quality, and morphological characteristics.\nWhy this dataset? * It’s representative of the kind of multi-trait data breeders work with. * It allows us to practice loading, inspecting, and performing basic summaries on realistic data. * This data comes from ICARDA’s valuable work in crop improvement for dry areas.\nColumn Descriptions (Partial List - full list would be in a data dictionary): * Taxa: The identifier for each barley accession (genotype). * Area: Grain area (e.g., mm²). * B_glucan: Beta-glucan content (%), a quality trait. * DTH: Days to Heading (days), an agronomic trait. * Fe: Iron content in grain (ppm), a nutritional trait. * FLA: Flag Leaf Area (cm²). * GY: Grain Yield (e.g., t/ha or kg/plot - units should always be known!). * PH: Plant Height (cm). * Protein: Grain protein content (%). * TKW: Thousand Kernel Weight (grams). * Zn: Zinc content in grain (ppm). * (And many others related to grain morphology and plant characteristics…)\nOur goal is to load this data (which is typically stored in a file like a CSV or Excel sheet) into an R data frame so we can start analyzing it.",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html#setting-up-libraries-and-file-path",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html#setting-up-libraries-and-file-path",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "9.2 Setting Up: Libraries and File Path",
+    "text": "9.2 Setting Up: Libraries and File Path\nFirst, we need to load the R packages that help us read data. The readr package (part of tidyverse) is excellent for reading text files like CSVs.\nRemember our RStudio Project setup! We will assume the data file is saved in the data/example/ subfolder of our project.\n# Load the necessary libraries\n# 'tidyverse' includes 'readr' (for read_csv) and 'dplyr' (for glimpse, etc.)\nlibrary(tidyverse)",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html#reading-the-csv-file",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html#reading-the-csv-file",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "9.3 Reading the CSV File",
+    "text": "9.3 Reading the CSV File\nLet’s say our barley data is stored in a CSV file named icarda_barley_2019_pheno.csv.\n# Define the path to our data file (relative to the project root)\nbarley_data_file_path &lt;- \"data/example/icarda_barley_2019_pheno.csv\"\n\n# Check if the file exists (good practice!)\nif (file.exists(barley_data_file_path)) {\n  # Use read_csv() from the readr package to load the data\n  barley_pheno_data &lt;- read_csv(barley_data_file_path)\n  \n  print(\"ICARDA Barley Phenotype data loaded successfully!\")\n} else {\n  print(paste(\"ERROR: File not found at:\", barley_data_file_path))\n  print(\"Please make sure 'icarda_barley_2019_pheno.csv' is in the 'data/example' folder.\")\n  # If the file isn't found, we'll create an empty placeholder to avoid later errors in the document\n  barley_pheno_data &lt;- tibble() # Creates an empty tibble (tidyverse data frame)\n}",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html#first-look-inspecting-the-loaded-data",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html#first-look-inspecting-the-loaded-data",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "9.4 First Look: Inspecting the Loaded Data",
+    "text": "9.4 First Look: Inspecting the Loaded Data\nIt’s CRUCIAL to always inspect your data immediately after loading it to make sure it looks correct.\n\nhead(): Shows the first few rows (default is 6). r     # Only run this if barley_pheno_data was loaded successfully     if (nrow(barley_pheno_data) &gt; 0) {       head(barley_pheno_data)     }\ndim(): Shows the dimensions (number of rows, number of columns). r     if (nrow(barley_pheno_data) &gt; 0) {       dim(barley_pheno_data)       # We expect around 275 rows (accessions) and several columns (traits)     }\nglimpse() (from dplyr): A great way to see column names, their data types, and the first few values. Better than str() for tibbles. r     if (nrow(barley_pheno_data) &gt; 0) {       glimpse(barley_pheno_data)       # Pay attention to the data types:       # - &lt;chr&gt; for character (like Taxa)       # - &lt;dbl&gt; for double (numeric with decimals, like most traits)       # - &lt;int&gt; for integer (whole numbers)       # read_csv usually does a good job guessing, but sometimes you might need to specify.     }\nsummary(): Provides basic summary statistics for each column (Min, Max, Mean, Median, Quartiles for numeric; counts for character/factor). r     if (nrow(barley_pheno_data) &gt; 0) {       summary(barley_pheno_data)       # This helps spot:       # - Obvious errors (e.g., negative yield if not possible)       # - Range of values for each trait       # - Number of NAs (missing values) if any     }",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html#understanding-data-types-in-our-barley-data",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html#understanding-data-types-in-our-barley-data",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "9.5 Understanding Data Types in Our Barley Data",
+    "text": "9.5 Understanding Data Types in Our Barley Data\nWhen glimpse() runs, you’ll see types like: * Taxa: Should be &lt;chr&gt; (character) as it’s an identifier. * Area, B_glucan, DTH, GY, PH, etc.: Should mostly be &lt;dbl&gt; (double-precision numeric) as they are measurements.\nIf read_csv misinterprets a numeric column as character (e.g., if there’s a text entry like “missing” in a numeric column), you’ll need to clean that data or specify column types during import using the col_types argument in read_csv(). (We’ll cover data cleaning later).",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  },
+  {
+    "objectID": "02_Data_Handling/01_Loading_Breeding_Data.html#quick-summary-of-a-specific-trait",
+    "href": "02_Data_Handling/01_Loading_Breeding_Data.html#quick-summary-of-a-specific-trait",
+    "title": "9  Module 2.1: Loading Breeding Data - ICARDA Barley Example",
+    "section": "9.6 Quick Summary of a Specific Trait",
+    "text": "9.6 Quick Summary of a Specific Trait\nLet’s say we are interested in Grain Yield (GY).\n# Make sure the data and the 'GY' column exist\nif (nrow(barley_pheno_data) &gt; 0 && \"GY\" %in% names(barley_pheno_data)) {\n  # Access the GY column\n  yield_values &lt;- barley_pheno_data$GY\n  \n  # Calculate some basic statistics\n  mean_yield &lt;- mean(yield_values, na.rm = TRUE) # na.rm=TRUE ignores missing values in calculation\n  min_yield &lt;- min(yield_values, na.rm = TRUE)\n  max_yield &lt;- max(yield_values, na.rm = TRUE)\n  sd_yield &lt;- sd(yield_values, na.rm = TRUE)\n\n  print(paste(\"Average Grain Yield (GY):\", round(mean_yield, 2)))\n  print(paste(\"Minimum Grain Yield (GY):\", round(min_yield, 2)))\n  print(paste(\"Maximum Grain Yield (GY):\", round(max_yield, 2)))\n  print(paste(\"Standard Deviation of GY:\", round(sd_yield, 2)))\n\n  # How many accessions do we have yield data for (non-missing)?\n  num_yield_obs &lt;- sum(!is.na(yield_values))\n  print(paste(\"Number of accessions with GY data:\", num_yield_obs))\n} else if (nrow(barley_pheno_data) &gt; 0) {\n  print(\"Column 'GY' not found in the loaded data.\")\n}\nExercise: 1. Load the icarda_barley_2019_pheno.csv file into R. 2. Use glimpse() to check the column names and data types. 3. Calculate and print the average Plant Height (PH) from the dataset. Remember to handle potential missing values (na.rm = TRUE).\nThis module has shown you the first critical step: getting your valuable field data into R. In the next modules, we’ll learn how to clean, manipulate, and visualize this data.",
+    "crumbs": [
+      "Handling Breeding Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Module 2.1: Loading Breeding Data - ICARDA Barley Example</span>"
+    ]
+  }
+]

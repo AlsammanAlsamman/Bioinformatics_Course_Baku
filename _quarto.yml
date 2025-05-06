@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: output  # Ensures rendered site ends up here for GitHub Actions
+  output-dir: docs  # Ensures rendered site ends up here for GitHub Actions
 
 book:
   title: "Plant Breeding Data Analysis with R - Baku"
