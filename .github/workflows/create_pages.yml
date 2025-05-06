@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Quarto
-        uses: quarto-dev/setup-quarto@v2
+        uses: quarto-dev/setup-quarto@main
         # with:
         #   version: 1.4.550 # Specify a version if needed
 
