@@ -1,6 +1,13 @@
+---
+title: "Welcome – Plant Breeding Data Analysis with R"
+format: html
+---
+
+[![](assets/logo.png){.img-fluid .rounded .mx-auto .d-block fig-alt="poster" style="margin-bottom: 2em;" width="10.7cm"}](https://www.icarda.org)
+
 # Welcome to the Plant Breeding Data Analysis Course
 
-**Target Audience:** Breeders in Baku, Azerbaijan with minimal prior data analysis or programming experience. Collaboration with ICARDA.
+**Target Audience:** Breeders in Baku, Azerbaijan with minimal prior data analysis or programming experience. Collaboration with [ICARDA](https://www.icarda.org).
 
 **Goal:** To provide a practical and understandable introduction to analyzing common breeding data types using the R programming language.
 
@@ -9,3 +16,17 @@ This course covers fundamental concepts in genetics and statistics relevant to b
 Please use the navigation menu (Table of Contents) to move through the course modules.
 
 Let's begin!
+
+<!-- Begin merged cover content with team table -->
+
+# Meet Your Instructors & the ICARDA Bioinformatics Unit
+
+The [ICARDA Bioinformatics Unit](https://www.icarda.org) is at the forefront of applying cutting-edge computational biology to address agricultural challenges in dry areas. Our multidisciplinary team specializes in genomics, data science, AI, and high-performance computing to empower your data analysis journey.
+
+| Photo | Name | Details |
+|:---------------------:|:-------------------|:----------------------------|
+| ![](./assets/zakaria.png){width="200px"} | **Zakaria Kehel** | Research Team Leader – Genetic Resources (GRS) & Morocco Interim Country Manager Genetic Innovation <br> Ph.D. from the School of Agricultural and Forestry Engineering at the University of Córdoba in Spain. |
+| ![](./assets/tamara.png){width="200px"} | **Tamara Ortiz** | Bioinformatician, started February 2024 <br> MS in Bioinformatics, NYU Tandon School of Engineering (2025–2026) <br> BE in Bioengineering, UTEC – Universidad de Ingeniería y Tecnología (2018–2023) |
+| ![](./assets/alsamman.png){width="200px"} | **Alsamman M. Alsamman** | Bioinformatician, started January 2021 <br> PhD in Genetics, Faculty of Agriculture, Ain Shams University; <br> MSc in Genetics, Faculty of Agriculture, Cairo University; <br> BSc in Biotechnology with a Bioinformatics Minor, Faculty of Agriculture, Al-Azhar University. |
+
+<!-- End merged cover content -->

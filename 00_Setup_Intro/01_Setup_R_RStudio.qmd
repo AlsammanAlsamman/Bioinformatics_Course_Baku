@@ -10,24 +10,31 @@
 1.  **Install R:** Go to [CRAN (the Comprehensive R Archive Network)](https://cran.r-project.org/) and download the latest version for your operating system (Windows, macOS, Linux). Follow the installation instructions.
 2.  **Install RStudio:** Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and download the free RStudio Desktop version for your operating system. Install it after installing R.
 3.  **Install Quarto:** Go to [Quarto's website](https://quarto.org/docs/get-started/) and download and install Quarto for your system. RStudio often bundles Quarto, but installing the latest version is good practice.
-4.  **(For PDF Output) Install LaTeX:** Open RStudio, go to the Console panel, and type the following commands one by one, pressing Enter after each: \`\`\`r \# Run these lines in the R Console \# install.packages("tinytex") \# Run only once if you dont have it \# tinytex::install_tinytex() \# Run only once to install LaTeX distribution \`\`\` This might take a few minutes. If it fails, consult TinyTeX documentation or ask instructors.
+4.  **(For PDF Output) Install LaTeX:** Open RStudio, go to the Console panel, and type the following commands one by one, pressing Enter after each:
+
+``` r
+# Run these lines in the R Console 
+# install.packages("tinytex") 
+# Run only once if you dont have it 
+# tinytex::install_tinytex() 
+# Run only once to install LaTeX distribution ``` 
+This might take a few minutes. If it fails, consult TinyTeX documentation or ask instructors.
 
 ## Installing R Packages for the Course
 
 We will use several add-on packages in R. You only need to install packages *once*. Use the R Console in RStudio.
 
-```r
+``` r
 
 # --- Run this code chunk in the R Console --- List of packages we will likely need:
 
 packages_to_install <- c( "tidyverse", # For data manipulation (dplyr, tidyr) and plotting (ggplot2)
-                    "readxl", # For reading Excel files (.xlsx)
-                    "writexl", # For writing Excel files (.xlsx)
-                    "rrBLUP", # For Kinship calculation and basic GWAS
-                    "qqman", # For creating Manhattan and QQ plots for GWAS
-                    "vcfR"
-                    )
-
+                 "readxl", # For reading Excel files (.xlsx)
+                 "writexl", # For writing Excel files (.xlsx)
+                 "rrBLUP", # For Kinship calculation and basic GWAS
+                 "qqman", # For creating Manhattan and QQ plots for GWAS
+                 "vcfR"
+                 )
 ```
 
 ## Quick RStudio Tour

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="This book provides a comprehensive introduction to R programming and its application in plant breeding data analysis.">
 
-<title>9&nbsp; Why Visualize Your Data? – Plant Breeding Data Analysis with R - Baku</title>
+<title>8&nbsp; Why Visualize Your Data? – Plant Breeding Data Analysis with R - Baku</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_R_Basics/01_Intro_To_R.html">R Programming Fundamentals</a></li><li class="breadcrumb-item"><a href="../01_R_Basics/05_Simple_Plotting.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_R_Basics/01_Intro_To_R.html">R Programming Fundamentals</a></li><li class="breadcrumb-item"><a href="../01_R_Basics/05_Simple_Plotting.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,14 +143,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../00_Cover/cover.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome &amp; Instructors – ICARDA Bioinformatics Team</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Welcome to the Plant Breeding Data Analysis Course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome – Plant Breeding Data Analysis with R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -164,13 +159,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../00_Setup_Intro/00_Welcome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Welcome and Course Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Welcome and Course Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../00_Setup_Intro/01_Setup_R_RStudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setting Up Your Environment: R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setting Up Your Environment: R and RStudio</span></span></a>
   </div>
 </li>
       </ul>
@@ -187,31 +182,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/01_Intro_To_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/02_Data_Types_Structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Module 1.2: R Data Types and Structures - The Building Blocks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Module 1.2: R Data Types and Structures - The Building Blocks</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/03_Basic_Operations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module 1.3: Basic Operations in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Module 1.3: Basic Operations in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/04_Reading_Writing_Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/05_Simple_Plotting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,13 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02_Data_Handling/01_Loading_Breeding_Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02_Data_Handling/02_Data_QC_Filtering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,13 +246,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03_Genomic_Concepts/01_SNPs_Genotypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">01_SNPs_Genotypes.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">01_SNPs_Genotypes.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03_Genomic_Concepts/02_Allele_Frequency_MAF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">02_Allele_Frequency_MAF.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">02_Allele_Frequency_MAF.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,19 +269,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/01_Similarity_Distances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">01_Similarity_Distances.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">01_Similarity_Distances.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/02_Kinship_Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">02_Kinship_Analysis.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">02_Kinship_Analysis.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/03_Visualizing_Structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">03_Visualizing_Structure.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">03_Visualizing_Structure.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,19 +298,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/01_Concept_Simple_Model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">01_Concept_Simple_Model.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">01_Concept_Simple_Model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/02_Running_Basic_GWAS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">02_Running_Basic_GWAS.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">02_Running_Basic_GWAS.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/03_Interpreting_Results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">03_Interpreting_Results.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">03_Interpreting_Results.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -332,13 +327,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../06_GIGWA_AI/01_GIGWA_Overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">01_GIGWA_Overview.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">01_GIGWA_Overview.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../06_GIGWA_AI/02_AI_Concepts_Breeders.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">02_AI_Concepts_Breeders.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">02_AI_Concepts_Breeders.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,24 +348,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducing-ggplot2-the-grammar-of-graphics" id="toc-introducing-ggplot2-the-grammar-of-graphics" class="nav-link active" data-scroll-target="#introducing-ggplot2-the-grammar-of-graphics"><span class="header-section-number">9.1</span> Introducing <code>ggplot2</code>: The Grammar of Graphics</a></li>
-  <li><a href="#lets-make-some-plots" id="toc-lets-make-some-plots" class="nav-link" data-scroll-target="#lets-make-some-plots"><span class="header-section-number">9.2</span> Let’s Make Some Plots!</a>
+  <li><a href="#introducing-ggplot2-the-grammar-of-graphics" id="toc-introducing-ggplot2-the-grammar-of-graphics" class="nav-link active" data-scroll-target="#introducing-ggplot2-the-grammar-of-graphics"><span class="header-section-number">8.1</span> Introducing <code>ggplot2</code>: The Grammar of Graphics</a></li>
+  <li><a href="#lets-make-some-plots" id="toc-lets-make-some-plots" class="nav-link" data-scroll-target="#lets-make-some-plots"><span class="header-section-number">8.2</span> Let’s Make Some Plots!</a>
   <ul class="collapse">
-  <li><a href="#scatter-plot-relationship-between-yield-and-height" id="toc-scatter-plot-relationship-between-yield-and-height" class="nav-link" data-scroll-target="#scatter-plot-relationship-between-yield-and-height"><span class="header-section-number">9.2.1</span> 1. Scatter Plot: Relationship between Yield and Height</a></li>
-  <li><a href="#histogram-distribution-of-yield" id="toc-histogram-distribution-of-yield" class="nav-link" data-scroll-target="#histogram-distribution-of-yield"><span class="header-section-number">9.2.2</span> 2. Histogram: Distribution of Yield</a></li>
-  <li><a href="#box-plot-compare-yield-across-locations" id="toc-box-plot-compare-yield-across-locations" class="nav-link" data-scroll-target="#box-plot-compare-yield-across-locations"><span class="header-section-number">9.2.3</span> 3. Box Plot: Compare Yield across Locations</a></li>
+  <li><a href="#scatter-plot-relationship-between-yield-and-height" id="toc-scatter-plot-relationship-between-yield-and-height" class="nav-link" data-scroll-target="#scatter-plot-relationship-between-yield-and-height"><span class="header-section-number">8.2.1</span> 1. Scatter Plot: Relationship between Yield and Height</a></li>
+  <li><a href="#histogram-distribution-of-yield" id="toc-histogram-distribution-of-yield" class="nav-link" data-scroll-target="#histogram-distribution-of-yield"><span class="header-section-number">8.2.2</span> 2. Histogram: Distribution of Yield</a></li>
+  <li><a href="#box-plot-compare-yield-across-locations" id="toc-box-plot-compare-yield-across-locations" class="nav-link" data-scroll-target="#box-plot-compare-yield-across-locations"><span class="header-section-number">8.2.3</span> 3. Box Plot: Compare Yield across Locations</a></li>
   </ul></li>
-  <li><a href="#saving-your-plots" id="toc-saving-your-plots" class="nav-link" data-scroll-target="#saving-your-plots"><span class="header-section-number">9.3</span> Saving Your Plots</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">9.4</span> Exercise</a></li>
+  <li><a href="#saving-your-plots" id="toc-saving-your-plots" class="nav-link" data-scroll-target="#saving-your-plots"><span class="header-section-number">8.3</span> Saving Your Plots</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">8.4</span> Exercise</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_R_Basics/01_Intro_To_R.html">R Programming Fundamentals</a></li><li class="breadcrumb-item"><a href="../01_R_Basics/05_Simple_Plotting.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_R_Basics/01_Intro_To_R.html">R Programming Fundamentals</a></li><li class="breadcrumb-item"><a href="../01_R_Basics/05_Simple_Plotting.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></h1>
 </div>
 
 
@@ -393,8 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Diagnose:</strong> Spot potential problems like outliers (strange values) or unexpected groupings. Check assumptions of statistical models.</li>
 <li><strong>Communicate:</strong> Clearly present your findings to colleagues, managers, or in publications.</li>
 </ul>
-<section id="introducing-ggplot2-the-grammar-of-graphics" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="introducing-ggplot2-the-grammar-of-graphics"><span class="header-section-number">9.1</span> Introducing <code>ggplot2</code>: The Grammar of Graphics</h2>
+<section id="introducing-ggplot2-the-grammar-of-graphics" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introducing-ggplot2-the-grammar-of-graphics"><span class="header-section-number">8.1</span> Introducing <code>ggplot2</code>: The Grammar of Graphics</h2>
 <p>R has basic plotting functions, but we will focus on the <strong><code>ggplot2</code></strong> package, which is part of the <code>tidyverse</code>. It’s extremely powerful and flexible for creating beautiful, publication-quality graphics.</p>
 <p><code>ggplot2</code> is based on the <strong>Grammar of Graphics</strong>. The idea is to build plots layer by layer:</p>
 <ol type="1">
@@ -414,8 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Other functions:</strong> Add labels (<code>labs()</code>), change themes (<code>theme_bw()</code>, <code>theme_minimal()</code>), split plots into facets (<code>facet_wrap()</code>), customize scales, etc.</li>
 </ol>
 </section>
-<section id="lets-make-some-plots" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="lets-make-some-plots"><span class="header-section-number">9.2</span> Let’s Make Some Plots!</h2>
+<section id="lets-make-some-plots" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="lets-make-some-plots"><span class="header-section-number">8.2</span> Let’s Make Some Plots!</h2>
 <p>First, load the necessary libraries:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
@@ -446,8 +441,8 @@ $ Yield    &lt;dbl&gt; 5.551619, 5.815858, 7.246967, 6.056407, 6.103430, 8.37205
 $ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.56653, …</code></pre>
 </div>
 </div>
-<section id="scatter-plot-relationship-between-yield-and-height" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="scatter-plot-relationship-between-yield-and-height"><span class="header-section-number">9.2.1</span> 1. Scatter Plot: Relationship between Yield and Height</h3>
+<section id="scatter-plot-relationship-between-yield-and-height" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="scatter-plot-relationship-between-yield-and-height"><span class="header-section-number">8.2.1</span> 1. Scatter Plot: Relationship between Yield and Height</h3>
 <p>See if taller plants tend to have higher yield in this dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. ggplot(): data is breeding_plot_data, map Height to x, Yield to y</span></span>
@@ -501,8 +496,8 @@ $ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.566
 </div>
 </div>
 </section>
-<section id="histogram-distribution-of-yield" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="histogram-distribution-of-yield"><span class="header-section-number">9.2.2</span> 2. Histogram: Distribution of Yield</h3>
+<section id="histogram-distribution-of-yield" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="histogram-distribution-of-yield"><span class="header-section-number">8.2.2</span> 2. Histogram: Distribution of Yield</h3>
 <p>See the frequency of different yield values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. ggplot(): data, map Yield to x-axis</span></span>
@@ -530,8 +525,8 @@ $ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.566
 </div>
 </div>
 </section>
-<section id="box-plot-compare-yield-across-locations" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" class="anchored" data-anchor-id="box-plot-compare-yield-across-locations"><span class="header-section-number">9.2.3</span> 3. Box Plot: Compare Yield across Locations</h3>
+<section id="box-plot-compare-yield-across-locations" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="box-plot-compare-yield-across-locations"><span class="header-section-number">8.2.3</span> 3. Box Plot: Compare Yield across Locations</h3>
 <p>Are yields different in Baku vs.&nbsp;Ganja? Box plots are great for comparing distributions across groups.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. ggplot(): data, map Location (categorical) to x, Yield (numeric) to y</span></span>
@@ -563,8 +558,8 @@ $ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.566
 <p>Box plot anatomy: The box shows the interquartile range (IQR, middle 50% of data), the line inside is the median, whiskers extend typically 1.5*IQR, points beyond are potential outliers.</p>
 </section>
 </section>
-<section id="saving-your-plots" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="saving-your-plots"><span class="header-section-number">9.3</span> Saving Your Plots</h2>
+<section id="saving-your-plots" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="saving-your-plots"><span class="header-section-number">8.3</span> Saving Your Plots</h2>
 <p>Use the <code>ggsave()</code> function after you’ve created a ggplot object (like plot1, plot2, etc.).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure the 'output/figures' directory exists</span></span>
@@ -597,8 +592,8 @@ $ Height   &lt;dbl&gt; 84.66088, 88.91013, 84.86998, 86.35554, 86.87480, 101.566
 </div>
 </div>
 </section>
-<section id="exercise" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="exercise"><span class="header-section-number">9.4</span> Exercise</h2>
+<section id="exercise" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="exercise"><span class="header-section-number">8.4</span> Exercise</h2>
 <p>Create a box plot comparing Plant Height (<code>Height</code>) across the different Varieties (<code>Variety</code>) in the <code>breeding_plot_data</code>. Save the plot as a PNG file named <code>height_variety_boxplot.png</code> in the <code>output/figures</code> directory.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise: Box plot comparing Plant Height across Varieties</span></span>
@@ -1073,16 +1068,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../01_R_Basics/04_Reading_Writing_Data.html" class="pagination-link" aria-label="Module 1.4: Reading and Writing Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../02_Data_Handling/01_Loading_Breeding_Data.html" class="pagination-link" aria-label="Module 2.1: Loading Breeding Data - ICARDA Barley Example">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, ICARDA</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

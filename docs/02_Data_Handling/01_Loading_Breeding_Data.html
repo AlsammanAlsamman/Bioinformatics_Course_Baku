@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="This book provides a comprehensive introduction to R programming and its application in plant breeding data analysis.">
 
-<title>10&nbsp; Module 2.1: Loading Breeding Data - ICARDA Barley Example – Plant Breeding Data Analysis with R - Baku</title>
+<title>9&nbsp; Module 2.1: Loading Breeding Data - ICARDA Barley Example – Plant Breeding Data Analysis with R - Baku</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html">Handling Breeding Data</a></li><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html">Handling Breeding Data</a></li><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,14 +143,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../00_Cover/cover.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome &amp; Instructors – ICARDA Bioinformatics Team</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Welcome to the Plant Breeding Data Analysis Course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome – Plant Breeding Data Analysis with R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -164,13 +159,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../00_Setup_Intro/00_Welcome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Welcome and Course Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Welcome and Course Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../00_Setup_Intro/01_Setup_R_RStudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setting Up Your Environment: R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setting Up Your Environment: R and RStudio</span></span></a>
   </div>
 </li>
       </ul>
@@ -187,31 +182,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/01_Intro_To_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Module 1.1: Introduction to R - Your Breeding Data Analysis Tool</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/02_Data_Types_Structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Module 1.2: R Data Types and Structures - The Building Blocks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Module 1.2: R Data Types and Structures - The Building Blocks</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/03_Basic_Operations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module 1.3: Basic Operations in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Module 1.3: Basic Operations in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/04_Reading_Writing_Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module 1.4: Reading and Writing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_R_Basics/05_Simple_Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,13 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02_Data_Handling/01_Loading_Breeding_Data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02_Data_Handling/02_Data_QC_Filtering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,13 +246,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03_Genomic_Concepts/01_SNPs_Genotypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">01_SNPs_Genotypes.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">01_SNPs_Genotypes.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03_Genomic_Concepts/02_Allele_Frequency_MAF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">02_Allele_Frequency_MAF.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">02_Allele_Frequency_MAF.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,19 +269,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/01_Similarity_Distances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">01_Similarity_Distances.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">01_Similarity_Distances.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/02_Kinship_Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">02_Kinship_Analysis.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">02_Kinship_Analysis.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04_Pop_Structure/03_Visualizing_Structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">03_Visualizing_Structure.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">03_Visualizing_Structure.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,19 +298,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/01_Concept_Simple_Model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">01_Concept_Simple_Model.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">01_Concept_Simple_Model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/02_Running_Basic_GWAS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">02_Running_Basic_GWAS.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">02_Running_Basic_GWAS.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05_GWAS_Intro/03_Interpreting_Results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">03_Interpreting_Results.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">03_Interpreting_Results.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -332,13 +327,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../06_GIGWA_AI/01_GIGWA_Overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">01_GIGWA_Overview.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">01_GIGWA_Overview.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../06_GIGWA_AI/02_AI_Concepts_Breeders.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">02_AI_Concepts_Breeders.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">02_AI_Concepts_Breeders.html</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,21 +348,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-the-dataset" id="toc-introduction-to-the-dataset" class="nav-link active" data-scroll-target="#introduction-to-the-dataset"><span class="header-section-number">10.1</span> Introduction to the Dataset</a></li>
-  <li><a href="#setting-up-libraries-and-file-path" id="toc-setting-up-libraries-and-file-path" class="nav-link" data-scroll-target="#setting-up-libraries-and-file-path"><span class="header-section-number">10.2</span> Setting Up: Libraries and File Path</a></li>
-  <li><a href="#reading-the-csv-file" id="toc-reading-the-csv-file" class="nav-link" data-scroll-target="#reading-the-csv-file"><span class="header-section-number">10.3</span> Reading the CSV File</a></li>
-  <li><a href="#first-look-inspecting-the-loaded-data" id="toc-first-look-inspecting-the-loaded-data" class="nav-link" data-scroll-target="#first-look-inspecting-the-loaded-data"><span class="header-section-number">10.4</span> First Look: Inspecting the Loaded Data</a></li>
-  <li><a href="#understanding-data-types-in-our-barley-data" id="toc-understanding-data-types-in-our-barley-data" class="nav-link" data-scroll-target="#understanding-data-types-in-our-barley-data"><span class="header-section-number">10.5</span> Understanding Data Types in Our Barley Data</a></li>
-  <li><a href="#quick-summary-of-a-specific-trait" id="toc-quick-summary-of-a-specific-trait" class="nav-link" data-scroll-target="#quick-summary-of-a-specific-trait"><span class="header-section-number">10.6</span> Quick Summary of a Specific Trait</a></li>
+  <li><a href="#introduction-to-the-dataset" id="toc-introduction-to-the-dataset" class="nav-link active" data-scroll-target="#introduction-to-the-dataset"><span class="header-section-number">9.1</span> Introduction to the Dataset</a></li>
+  <li><a href="#setting-up-libraries-and-file-path" id="toc-setting-up-libraries-and-file-path" class="nav-link" data-scroll-target="#setting-up-libraries-and-file-path"><span class="header-section-number">9.2</span> Setting Up: Libraries and File Path</a></li>
+  <li><a href="#reading-the-csv-file" id="toc-reading-the-csv-file" class="nav-link" data-scroll-target="#reading-the-csv-file"><span class="header-section-number">9.3</span> Reading the CSV File</a></li>
+  <li><a href="#first-look-inspecting-the-loaded-data" id="toc-first-look-inspecting-the-loaded-data" class="nav-link" data-scroll-target="#first-look-inspecting-the-loaded-data"><span class="header-section-number">9.4</span> First Look: Inspecting the Loaded Data</a></li>
+  <li><a href="#understanding-data-types-in-our-barley-data" id="toc-understanding-data-types-in-our-barley-data" class="nav-link" data-scroll-target="#understanding-data-types-in-our-barley-data"><span class="header-section-number">9.5</span> Understanding Data Types in Our Barley Data</a></li>
+  <li><a href="#quick-summary-of-a-specific-trait" id="toc-quick-summary-of-a-specific-trait" class="nav-link" data-scroll-target="#quick-summary-of-a-specific-trait"><span class="header-section-number">9.6</span> Quick Summary of a Specific Trait</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html">Handling Breeding Data</a></li><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html">Handling Breeding Data</a></li><li class="breadcrumb-item"><a href="../02_Data_Handling/01_Loading_Breeding_Data.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module 2.1: Loading Breeding Data - ICARDA Barley Example</span></h1>
 </div>
 
 
@@ -384,23 +379,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-to-the-dataset" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="introduction-to-the-dataset"><span class="header-section-number">10.1</span> Introduction to the Dataset</h2>
+<section id="introduction-to-the-dataset" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction-to-the-dataset"><span class="header-section-number">9.1</span> Introduction to the Dataset</h2>
 <p>In this module, we’ll learn how to load typical phenotypic data into R. We’ll use a real-world example: data from a study on <strong>275 barley accessions conducted at ICARDA in 2019</strong>. This dataset contains various measurements related to agronomic traits, grain quality, and morphological characteristics.</p>
 <p><strong>Why this dataset?</strong> * It’s representative of the kind of multi-trait data breeders work with. * It allows us to practice loading, inspecting, and performing basic summaries on realistic data. * This data comes from ICARDA’s valuable work in crop improvement for dry areas.</p>
 <p><strong>Column Descriptions (Partial List - full list would be in a data dictionary):</strong> * <code>Taxa</code>: The identifier for each barley accession (genotype). * <code>Area</code>: Grain area (e.g., mm²). * <code>B_glucan</code>: Beta-glucan content (%), a quality trait. * <code>DTH</code>: Days to Heading (days), an agronomic trait. * <code>Fe</code>: Iron content in grain (ppm), a nutritional trait. * <code>FLA</code>: Flag Leaf Area (cm²). * <code>GY</code>: Grain Yield (e.g., t/ha or kg/plot - units should always be known!). * <code>PH</code>: Plant Height (cm). * <code>Protein</code>: Grain protein content (%). * <code>TKW</code>: Thousand Kernel Weight (grams). * <code>Zn</code>: Zinc content in grain (ppm). * <em>(And many others related to grain morphology and plant characteristics…)</em></p>
 <p>Our goal is to load this data (which is typically stored in a file like a CSV or Excel sheet) into an R data frame so we can start analyzing it.</p>
 </section>
-<section id="setting-up-libraries-and-file-path" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="setting-up-libraries-and-file-path"><span class="header-section-number">10.2</span> Setting Up: Libraries and File Path</h2>
+<section id="setting-up-libraries-and-file-path" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="setting-up-libraries-and-file-path"><span class="header-section-number">9.2</span> Setting Up: Libraries and File Path</h2>
 <p>First, we need to load the R packages that help us read data. The <code>readr</code> package (part of <code>tidyverse</code>) is excellent for reading text files like CSVs.</p>
 <p>Remember our RStudio Project setup! We will assume the data file is saved in the <code>data/example/</code> subfolder of our project.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the necessary libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 'tidyverse' includes 'readr' (for read_csv) and 'dplyr' (for glimpse, etc.)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="reading-the-csv-file" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="reading-the-csv-file"><span class="header-section-number">10.3</span> Reading the CSV File</h2>
+<section id="reading-the-csv-file" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="reading-the-csv-file"><span class="header-section-number">9.3</span> Reading the CSV File</h2>
 <p>Let’s say our barley data is stored in a CSV file named <code>icarda_barley_2019_pheno.csv</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the path to our data file (relative to the project root)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>barley_data_file_path <span class="ot">&lt;-</span> <span class="st">"data/example/icarda_barley_2019_pheno.csv"</span></span>
@@ -418,8 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  barley_pheno_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>() <span class="co"># Creates an empty tibble (tidyverse data frame)</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="first-look-inspecting-the-loaded-data" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="first-look-inspecting-the-loaded-data"><span class="header-section-number">10.4</span> First Look: Inspecting the Loaded Data</h2>
+<section id="first-look-inspecting-the-loaded-data" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="first-look-inspecting-the-loaded-data"><span class="header-section-number">9.4</span> First Look: Inspecting the Loaded Data</h2>
 <p>It’s <strong>CRUCIAL</strong> to always inspect your data immediately after loading it to make sure it looks correct.</p>
 <ol type="1">
 <li><p><strong><code>head()</code></strong>: Shows the first few rows (default is 6). <code>r     # Only run this if barley_pheno_data was loaded successfully     if (nrow(barley_pheno_data) &gt; 0) {       head(barley_pheno_data)     }</code></p></li>
@@ -428,13 +423,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong><code>summary()</code></strong>: Provides basic summary statistics for each column (Min, Max, Mean, Median, Quartiles for numeric; counts for character/factor). <code>r     if (nrow(barley_pheno_data) &gt; 0) {       summary(barley_pheno_data)       # This helps spot:       # - Obvious errors (e.g., negative yield if not possible)       # - Range of values for each trait       # - Number of NAs (missing values) if any     }</code></p></li>
 </ol>
 </section>
-<section id="understanding-data-types-in-our-barley-data" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="understanding-data-types-in-our-barley-data"><span class="header-section-number">10.5</span> Understanding Data Types in Our Barley Data</h2>
+<section id="understanding-data-types-in-our-barley-data" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="understanding-data-types-in-our-barley-data"><span class="header-section-number">9.5</span> Understanding Data Types in Our Barley Data</h2>
 <p>When <code>glimpse()</code> runs, you’ll see types like: * <code>Taxa</code>: Should be <code>&lt;chr&gt;</code> (character) as it’s an identifier. * <code>Area</code>, <code>B_glucan</code>, <code>DTH</code>, <code>GY</code>, <code>PH</code>, etc.: Should mostly be <code>&lt;dbl&gt;</code> (double-precision numeric) as they are measurements.</p>
 <p>If <code>read_csv</code> misinterprets a numeric column as character (e.g., if there’s a text entry like “missing” in a numeric column), you’ll need to clean that data or specify column types during import using the <code>col_types</code> argument in <code>read_csv()</code>. (We’ll cover data cleaning later).</p>
 </section>
-<section id="quick-summary-of-a-specific-trait" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="quick-summary-of-a-specific-trait"><span class="header-section-number">10.6</span> Quick Summary of a Specific Trait</h2>
+<section id="quick-summary-of-a-specific-trait" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="quick-summary-of-a-specific-trait"><span class="header-section-number">9.6</span> Quick Summary of a Specific Trait</h2>
 <p>Let’s say we are interested in Grain Yield (<code>GY</code>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure the data and the 'GY' column exist</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(barley_pheno_data) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> <span class="st">"GY"</span> <span class="sc">%in%</span> <span class="fu">names</span>(barley_pheno_data)) {</span>
@@ -888,16 +883,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../01_R_Basics/05_Simple_Plotting.html" class="pagination-link" aria-label="Why Visualize Your Data?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Why Visualize Your Data?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../02_Data_Handling/02_Data_QC_Filtering.html" class="pagination-link" aria-label="02_Data_QC_Filtering.html">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">02_Data_QC_Filtering.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, ICARDA</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

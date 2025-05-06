@@ -4,11 +4,19 @@ project:
 
 book:
   title: "Plant Breeding Data Analysis with R - Baku"
+  subtitle: "A Practical Guide for Breeders"
+  description: "This book provides a comprehensive introduction to R programming and its application in plant breeding data analysis."
+  page-footer:
+    left: "Copyright 2025, ICARDA"
+    right:
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com/
   author: "Your Name / Breeding Institute Baku (ICARDA Collaboration)"
   date: today
   date-format: "YYYY-MM-DD"
   chapters:
-    - 00_Cover/cover.qmd
     - index.qmd
     - part: "Introduction and Setup"
       chapters:
@@ -47,21 +55,16 @@ book:
 format:
   html:
     theme: cosmo
-    toc: true
-    toc-depth: 3
-
   pdf:
     documentclass: scrreprt
     toc: true
     toc-depth: 3
-
   revealjs:
     theme: default
-    css: custom.css
+    # css: custom.css # Also try commenting this out as a test (see step 3)
     slide-number: true
     chalkboard: true
     logo: assets/icarda_logo.png
-
   beamer:
     documentclass: beamer
     theme: Madrid
@@ -71,5 +74,13 @@ format:
     aspectratio: 169
 
 # bibliography: references.bib
+
+# --- THIS BLOCK MIGHT BE CAUSING ISSUES ---
+# Comment out or delete this entire 'website:' block for testing:
+# website:
+#   page-footer:
+#     left: "International Center for Agricultural Research in the Dry Areas (ICARDA)"
+#     center: "Plant Breeding Data Analysis with R - Baku"
+# -------------------------------------------
 
 editor: visual
