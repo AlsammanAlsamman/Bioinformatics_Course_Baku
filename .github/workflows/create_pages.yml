@@ -41,7 +41,8 @@ jobs:
         with:
           packages: |
             any::ggplot2
-            any::dplyr
+            any::rmarkdown
+            any::knitr
             # Add other required packages here
           # Or use this if you have a DESCRIPTION file:
           # dependencies: |
