@@ -1,0 +1,96 @@
+# Module 2.1: Loading Breeding Data - ICARDA Barley Example
+
+## Introduction to the Dataset
+
+In this module, we'll learn how to load typical phenotypic data into R. We'll use a real-world example: data from a study on **275 barley accessions conducted at ICARDA in 2019**. This dataset contains various measurements related to agronomic traits, grain quality, and morphological characteristics.
+
+**Why this dataset?** \* It's representative of the kind of multi-trait data breeders work with. \* It allows us to practice loading, inspecting, and performing basic summaries on realistic data. \* This data comes from ICARDA's valuable work in crop improvement for dry areas.
+
+**Column Descriptions (Partial List - full list would be in a data dictionary):** \* `Taxa`: The identifier for each barley accession (genotype). \* `Area`: Grain area (e.g., mm²). \* `B_glucan`: Beta-glucan content (%), a quality trait. \* `DTH`: Days to Heading (days), an agronomic trait. \* `Fe`: Iron content in grain (ppm), a nutritional trait. \* `FLA`: Flag Leaf Area (cm²). \* `GY`: Grain Yield (e.g., t/ha or kg/plot - units should always be known!). \* `PH`: Plant Height (cm). \* `Protein`: Grain protein content (%). \* `TKW`: Thousand Kernel Weight (grams). \* `Zn`: Zinc content in grain (ppm). \* *(And many others related to grain morphology and plant characteristics...)*
+
+Our goal is to load this data (which is typically stored in a file like a CSV or Excel sheet) into an R data frame so we can start analyzing it.
+
+## Setting Up: Libraries and File Path
+
+First, we need to load the R packages that help us read data. The `readr` package (part of `tidyverse`) is excellent for reading text files like CSVs.
+
+Remember our RStudio Project setup! We will assume the data file is saved in the `data/example/` subfolder of our project.
+
+``` r
+# Load the necessary libraries
+# 'tidyverse' includes 'readr' (for read_csv) and 'dplyr' (for glimpse, etc.)
+library(tidyverse) 
+```
+
+## Reading the CSV File
+
+Let's say our barley data is stored in a CSV file named `icarda_barley_2019_pheno.csv`.
+
+``` r
+# Define the path to our data file (relative to the project root)
+barley_data_file_path <- "data/example/icarda_barley_2019_pheno.csv"
+
+# Check if the file exists (good practice!)
+if (file.exists(barley_data_file_path)) {
+  # Use read_csv() from the readr package to load the data
+  barley_pheno_data <- read_csv(barley_data_file_path)
+  
+  print("ICARDA Barley Phenotype data loaded successfully!")
+} else {
+  print(paste("ERROR: File not found at:", barley_data_file_path))
+  print("Please make sure 'icarda_barley_2019_pheno.csv' is in the 'data/example' folder.")
+  # If the file isn't found, we'll create an empty placeholder to avoid later errors in the document
+  barley_pheno_data <- tibble() # Creates an empty tibble (tidyverse data frame)
+}
+```
+
+## First Look: Inspecting the Loaded Data
+
+It's **CRUCIAL** to always inspect your data immediately after loading it to make sure it looks correct.
+
+1.  **`head()`**: Shows the first few rows (default is 6). `r     # Only run this if barley_pheno_data was loaded successfully     if (nrow(barley_pheno_data) > 0) {       head(barley_pheno_data)     }`
+
+2.  **`dim()`**: Shows the dimensions (number of rows, number of columns). `r     if (nrow(barley_pheno_data) > 0) {       dim(barley_pheno_data)       # We expect around 275 rows (accessions) and several columns (traits)     }`
+
+3.  **`glimpse()`** (from `dplyr`): A great way to see column names, their data types, and the first few values. Better than `str()` for tibbles. `r     if (nrow(barley_pheno_data) > 0) {       glimpse(barley_pheno_data)       # Pay attention to the data types:       # - <chr> for character (like Taxa)       # - <dbl> for double (numeric with decimals, like most traits)       # - <int> for integer (whole numbers)       # read_csv usually does a good job guessing, but sometimes you might need to specify.     }`
+
+4.  **`summary()`**: Provides basic summary statistics for each column (Min, Max, Mean, Median, Quartiles for numeric; counts for character/factor). `r     if (nrow(barley_pheno_data) > 0) {       summary(barley_pheno_data)       # This helps spot:       # - Obvious errors (e.g., negative yield if not possible)       # - Range of values for each trait       # - Number of NAs (missing values) if any     }`
+
+## Understanding Data Types in Our Barley Data
+
+When `glimpse()` runs, you'll see types like: \* `Taxa`: Should be `<chr>` (character) as it's an identifier. \* `Area`, `B_glucan`, `DTH`, `GY`, `PH`, etc.: Should mostly be `<dbl>` (double-precision numeric) as they are measurements.
+
+If `read_csv` misinterprets a numeric column as character (e.g., if there's a text entry like "missing" in a numeric column), you'll need to clean that data or specify column types during import using the `col_types` argument in `read_csv()`. (We'll cover data cleaning later).
+
+## Quick Summary of a Specific Trait
+
+Let's say we are interested in Grain Yield (`GY`).
+
+``` r
+# Make sure the data and the 'GY' column exist
+if (nrow(barley_pheno_data) > 0 && "GY" %in% names(barley_pheno_data)) {
+  # Access the GY column
+  yield_values <- barley_pheno_data$GY
+  
+  # Calculate some basic statistics
+  mean_yield <- mean(yield_values, na.rm = TRUE) # na.rm=TRUE ignores missing values in calculation
+  min_yield <- min(yield_values, na.rm = TRUE)
+  max_yield <- max(yield_values, na.rm = TRUE)
+  sd_yield <- sd(yield_values, na.rm = TRUE)
+
+  print(paste("Average Grain Yield (GY):", round(mean_yield, 2)))
+  print(paste("Minimum Grain Yield (GY):", round(min_yield, 2)))
+  print(paste("Maximum Grain Yield (GY):", round(max_yield, 2)))
+  print(paste("Standard Deviation of GY:", round(sd_yield, 2)))
+
+  # How many accessions do we have yield data for (non-missing)?
+  num_yield_obs <- sum(!is.na(yield_values))
+  print(paste("Number of accessions with GY data:", num_yield_obs))
+} else if (nrow(barley_pheno_data) > 0) {
+  print("Column 'GY' not found in the loaded data.")
+}
+```
+
+**Exercise:** 1. Load the `icarda_barley_2019_pheno.csv` file into R. 2. Use `glimpse()` to check the column names and data types. 3. Calculate and print the average Plant Height (`PH`) from the dataset. Remember to handle potential missing values (`na.rm = TRUE`).
+
+This module has shown you the first critical step: getting your valuable field data into R. In the next modules, we'll learn how to clean, manipulate, and visualize this data.
