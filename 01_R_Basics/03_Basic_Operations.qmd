@@ -134,5 +134,17 @@ trial_data <- data.frame(
     resistant_plots <- trial_data[trial_data$Is_Resistant == TRUE, ] # Or just trial_data[trial_data$Is_Resistant, ]
     print(resistant_plots)
     ```
+## apply() collection
+
+The apply() family of functions lets us apply a function to the rows or columns in a matrix or data frame, a list or a vector. 
+
+    ``` r
+    # Imagine we have a data matrix of plot yield values for different varieties.
+    # Each row represents a variety and each column a yield measurement for each trial
+    plot_trials <- matrix(c(5.2, 4.5, 6.1, 5.5, 4, 6.6, 7, 5.1, 5.3), nrow = 3, ncol = 3)
+
+    # We calculate the mean for each variety (each row), 1 means function is run on rows, 2 would mean function is run on columns
+    apply(plot_trials, 1, mean)
+    ```
 
 **Exercise:** Select the data for the 'Local_Check' variety from the `trial_data` data frame. Calculate its yield.
