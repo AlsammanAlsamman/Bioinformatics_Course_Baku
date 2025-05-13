@@ -28,13 +28,16 @@ We will use several add-on packages in R. You only need to install packages *onc
 
 # --- Run this code chunk in the R Console --- List of packages we will likely need:
 
-packages_to_install <- c( "tidyverse", # For data manipulation (dplyr, tidyr) and plotting (ggplot2)
-                 "readxl", # For reading Excel files (.xlsx)
-                 "writexl", # For writing Excel files (.xlsx)
-                 "rrBLUP", # For Kinship calculation and basic GWAS
-                 "qqman", # For creating Manhattan and QQ plots for GWAS
-                 "vcfR"
-                 )
+packages_to_install <- c(
+  "tidyverse", # For data manipulation (dplyr, tidyr) and plotting (ggplot2)
+  "readxl", # For reading Excel files (.xlsx)
+  "writexl", # For writing Excel files (.xlsx)
+  "rrBLUP", # For Kinship calculation and basic GWAS
+  "qqman", # For creating Manhattan and QQ plots for GWAS
+  "vcfR"
+)
+install.packages(packages_to_install)
+
 ```
 
 ## Quick RStudio Tour
