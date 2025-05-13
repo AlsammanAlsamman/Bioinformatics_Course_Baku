@@ -56,5 +56,9 @@ z
 # Assign the name of a variety to a variable
 best_variety <- "ICARDA_Gold" # Text needs quotes ""
 
-print(average_yield)
+# Print name
+print(best_variety)
+
+# We can also concatenate text like this
+print(paste("The best variety is", best_variety))
 ```
