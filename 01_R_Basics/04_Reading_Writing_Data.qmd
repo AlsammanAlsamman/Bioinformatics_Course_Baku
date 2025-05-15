@@ -7,6 +7,7 @@ So far, we've created data inside R. But usually, your breeding data exists in e
 -   **CSV (Comma Separated Values - `.csv`):** Plain text file where columns are separated by commas. Very common, easily readable by many programs (including R and Excel). **Often the best format for sharing data.**
 -   **TSV (Tab Separated Values - `.tsv`):** Similar to CSV, but uses tabs to separate columns.
 -   **Excel Files (`.xls`, `.xlsx`):** Native Microsoft Excel format. Can contain multiple sheets, formatting, formulas. Requires specific R packages to read/write.
+-   **Text Files(`.txt`):** Additionally, data can be saved as a simple text file. This file type can support comma or tab separated values. You would simply need to specify your separator when reading the file. 
 
 ## Paths, Working Directory, and RStudio Projects (Best Practice!)
 
