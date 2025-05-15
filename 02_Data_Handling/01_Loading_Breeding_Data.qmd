@@ -94,3 +94,22 @@ if (nrow(barley_pheno_data) > 0 && "GY" %in% names(barley_pheno_data)) {
 **Exercise:** 1. Load the `icarda_barley_2019_pheno.csv` file into R. 2. Use `glimpse()` to check the column names and data types. 3. Calculate and print the average Plant Height (`PH`) from the dataset. Remember to handle potential missing values (`na.rm = TRUE`).
 
 This module has shown you the first critical step: getting your valuable field data into R. In the next modules, we'll learn how to clean, manipulate, and visualize this data.
+
+``` r
+# Exercise
+# Setting file path
+barley_data_file_path <- "icarda_barley_2019_pheno.csv"
+
+# Loading file into data frame
+barley_pheno_data <- read_csv(barley_data_file_path)
+
+# Inspect data and data types
+glimpse(barley_pheno_data)
+
+# Calculating average Plant Height
+plant_heights <- barley_pheno_data$PH # extracting plant height column
+mean_height <- mean(plant_heights, na.rm = TRUE)
+
+# Printing average Plant Height
+print(paste("Average Plant Height (PH):", round(mean_height, 2)))
+```
