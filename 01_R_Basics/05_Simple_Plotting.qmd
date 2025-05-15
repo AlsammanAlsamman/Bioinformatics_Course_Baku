@@ -21,7 +21,7 @@ R has basic plotting functions, but we will focus on the **`ggplot2`** package, 
     -   `geom_boxplot()`: Creates box-and-whisker plots.
     -   `geom_line()`: Creates lines.
     -   `geom_bar()`: Creates bar charts.
-3.  **Other functions:** Add labels (`labs()`), change themes (`theme_bw()`, `theme_minimal()`), split plots into facets (`facet_wrap()`), customize scales, etc.
+3.  **Other functions:** Add labels (`labs()`), change themes (`theme_bw()`, `theme_minimal()`), split plots into facets (`facet_wrap()`), customize scales, etc. Each function also allows you to edit aesthetic characteristics such as size, color, etc.
 
 ## Let's Make Some Plots!
 
