@@ -40,6 +40,7 @@ jobs:
         with:
           packages: |
             any::ggplot2
+            any::math
             any::dplyr
             any::rmarkdown
             any::knitr
